@@ -5,7 +5,7 @@ function Footer() {
     return (
         <div>
         <footer className="footer">
-            <div className="footer-column">
+            {/* <div className="footer-column">
                 <h3>Quick Links</h3>
                 <ul>
                     <li><Link to="/">Home</Link></li>
@@ -13,7 +13,7 @@ function Footer() {
                     <li><Link to="/departments">Departments</Link></li>
                     <li><Link to="/services">Services</Link></li>
                 </ul>
-            </div>
+            </div> */}
             <div className="footer-column">
                 <h3>Subscribe to the newsletter</h3>
                 <input type="email" placeholder="Enter your email address" />
