@@ -123,3 +123,11 @@
     background-color: #0056b3;
   }
   
+  .social-media{
+    float: right;
+    right: 10px;
+  }
+
+  .social-media a {
+    margin-right: 10px;
+  }

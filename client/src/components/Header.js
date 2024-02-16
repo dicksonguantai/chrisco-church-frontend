@@ -1,5 +1,6 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+// import {Link} from 'react-router-dom';
+import { FaMapMarkerAlt, FaPhone, FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
 
 function Header(){
     const churchTitle = "CENTRAL CHURCH - NAIROBI";
@@ -12,7 +13,7 @@ function Header(){
                 <span className="title">{churchTitle}</span>
             </div>
             <nav className="navbar">
-                <ul className="nav-links">
+                {/* <ul className="nav-links">
                     <li className="nav-item">
                         <Link to="/" >Home</Link>
                     </li>
@@ -25,7 +26,7 @@ function Header(){
                     <li className="nav-item">
                         <Link to="/services" >Services</Link>
                     </li>
-                </ul>
+                </ul> */}
             </nav>
             <div>
                 <button className="button">Give</button>
