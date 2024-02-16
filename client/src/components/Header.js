@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 
 function Header(){
     const churchTitle = "CENTRAL CHURCH - NAIROBI";
-    const logoUrl = "/logo.png"; 
+    const logoUrl = "/Churchlogo.png"; 
 
     return (
         <header className="header">
