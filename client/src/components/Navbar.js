@@ -14,26 +14,26 @@ const Navbar = () => {
         <div className="give-button">
           <div className="nav-item-link">
             <div className="nav-list">
-                <Link>Home</Link>
+                <Link to="/">Home</Link>
                 </div>
           </div>
           <div className="nav-item-link1">
             <div className="nav-list1">
-            <Link>About Us</Link>
+            <Link to= "/about-us">About Us</Link>
             </div>
           </div>
           <div className="nav-item-link2">
             <div className="nav-list2">
-            <Link>Departments</Link>
+            <Link to="/departments">Departments</Link>
 
             </div>
           </div>
           <div className="nav-list3">
-          <Link>Services</Link>
+          <Link to= "/services">Services</Link>
           </div>
           <div className="nav-item-link3">
             <div className="nav-list4">
-            <Link>Contact Us</Link>
+            <Link to="/contact-us">Contact Us</Link>
             </div>
           </div>
           <button className="give login-text nav-container">
