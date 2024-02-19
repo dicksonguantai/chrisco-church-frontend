@@ -1,0 +1,152 @@
+.nav-link-krgcjpg {
+    height: 150px;
+    width: 363px;
+    position: relative;
+    overflow: hidden;
+    flex-shrink: 0;
+    object-fit: cover;
+    max-width: 100%;
+  }
+  .nav-list {
+    position: relative;
+    text-decoration: none;
+    line-height: 24px;
+  }
+  .nav-item-link {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0 20px 0 0;
+    color: #ed1d24;
+  }
+  .nav-list1 {
+    position: relative;
+    text-decoration: none ;
+    line-height: 24px;
+    white-space: nowrap;
+  }
+  .nav-item-link1 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0 24px 0 0;
+  }
+  .nav-list2 {
+    position: relative;
+    text-decoration: none;
+    line-height: 24px;
+    white-space: nowrap;
+  }
+  .nav-item-link2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0 17px 0 0;
+  }
+  .nav-list3,
+  .nav-list4 {
+    position: relative;
+    text-decoration: none;
+    line-height: 24px;
+    white-space: nowrap;
+  }
+  .nav-item-link3 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0 10px 0 0;
+  }
+  .ive {
+    font-family: MuseoModerno;
+  }
+  .give-txt {
+    line-break: anywhere;
+  }
+  .give,
+  .login-text {
+    display: flex;
+    align-items: center;
+  }
+  .give {
+    height: 33px;
+    position: relative;
+    white-space: nowrap;
+  }
+  .login-text {
+    border-radius: 5px;
+    background-color: #dd212e;
+    flex-direction: row;
+    justify-content: center;
+    padding: 1px 16px 1px 15px;
+  }
+  .give-call-to-action,
+  .login {
+    font-size: 20px;
+    font-family: "Mukta Mahee";
+    color: #fff;
+    text-align: center;
+  }
+  .give-call-to-action {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0 8px 0 0;
+  }
+  .login {
+    position: relative;
+    white-space: nowrap;
+  }
+  .give-button,
+  .nav-container {
+    display: flex;
+    flex-direction: row;
+  }
+  .nav-container {
+    cursor: pointer;
+    border: 0;
+    padding: 1px;
+    background-color: #dd212e;
+    width: 101px;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  .nav-container:hover {
+    background-color: #ff4754;
+  }
+  .give-button {
+    align-self: stretch;
+    flex: 1;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  .give-button-wrapper,
+  .nav-link-krgcjpg-parent {
+    display: flex;
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+  .give-button-wrapper {
+    height: 39px;
+    width: 961px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 3px 0 0;
+  }
+  .nav-link-krgcjpg-parent {
+    width:100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px 10px 10px;
+    gap: 20px;
+    text-align: left;
+  }

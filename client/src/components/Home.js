@@ -46,22 +46,7 @@ function Home(){
 
   return (
     <div>
-      <div className='map'>
-        <a href="https://maps.app.goo.gl/uquZp7P6f5Gdh29T9">
-          <FaMapMarkerAlt /> 
-        </a>
-      </div>
-      <div className="social-media">
-        <a href="https://www.facebook.com/chrisconairobi?mibextid=JRoKGi">
-          <FaFacebook />
-        </a>
-        <a href="https://x.com/chrisconairobi?t=3ZQ1zpqWYmXwUjIEyEuvaQ&s=09">
-          <FaTwitter />
-        </a>
-        <a href="https://www.instagram.com/chrisconairobi?igsh=MWwzZ3ZmdmRwYzVvNw==">
-          <FaInstagram />
-        </a>
-      </div>
+      
       <Header />
       <div className="image-container">
         <img src={imageUrl} alt="Image" className="image" />

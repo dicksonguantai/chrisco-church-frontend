@@ -1,39 +1,48 @@
-import React from 'react';
-// import {Link} from 'react-router-dom';
-import { FaMapMarkerAlt, FaPhone, FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
+import React from "react";
+import "./Header.css";
+import {IoIosCall} from 'react-icons/io'
+import { CiLocationOn } from "react-icons/ci";
+import { SlSocialFacebook,SlSocialYoutube } from "react-icons/sl";
+import { PiTiktokLogo } from "react-icons/pi";
+import { FaXTwitter } from "react-icons/fa6";
 
-function Header(){
-    const churchTitle = "CENTRAL CHURCH - NAIROBI";
-    const logoUrl = "/Churchlogo.png"; 
+import Navbar from "./Navbar";
 
-    return (
-        <header className="header">
-            <div className="left-container">
-                <img src={logoUrl} alt="Logo" className="logo" />
-                <span className="title">{churchTitle}</span>
+const HomePage = () => {
+  return (
+    <div className="home-page">
+      <div className="home-page-inner">
+        <div className="frame-parent">
+          <div className="frame-group">
+            <div className="vector-parent">
+              
+              <div className="vector-icon"><IoIosCall size= {28}/></div>
+              
+              <div className="empty-frame">+25471111234567</div>
             </div>
-            <nav className="navbar">
-                {/* <ul className="nav-links">
-                    <li className="nav-item">
-                        <Link to="/" >Home</Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link to="/about" >About Us</Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link to="/departments" >Departments</Link>
-                    </li>
-                    <li className="nav-item">
-                        <Link to="/services" >Services</Link>
-                    </li>
-                </ul> */}
-            </nav>
-            <div>
-                <button className="button">Give</button>
-                <button className="button">Login</button>
-            </div>
-        </header>
-    );
-}
+            <div className="location-parent">
+             
+              <div className="location-icon"><CiLocationOn size= {28}/></div>
 
-export default Header;
+              <div className="nairobi-woodley">
+                Nairobi, Woodley , Ngong Road.
+              </div>
+            </div>
+          </div>
+          <div className="nav-link">
+            <div className="join-our-community">Join our Community:</div>
+            <SlSocialFacebook />            
+            <SlSocialYoutube />
+            <PiTiktokLogo />
+            <FaXTwitter />
+
+
+          </div>
+        </div>
+      </div>
+      <Navbar/>
+    </div>
+  );
+};
+
+export default HomePage;

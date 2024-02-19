@@ -1,0 +1,156 @@
+
+.vector-icon {
+    height: 19.3px;
+    width: 21.1px;
+    position: relative;
+  }
+  .empty-frame {
+    position: relative;
+    white-space: nowrap;
+  }
+  .vector-parent {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0 11px;
+  }
+  .location-icon {
+    height: 21.2px;
+    width: 19px;
+    position: relative;
+  }
+  .nairobi-woodley {
+    flex: 1;
+    position: relative;
+  }
+  .frame-group,
+  .location-parent {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+  .location-parent {
+    flex: 1;
+    align-items: flex-start;
+    gap: 0 9px;
+    min-width: 172px;
+    font-size: 17px;
+  }
+  .frame-group {
+    width: 552px;
+    align-items: flex-start;
+    gap: 0 148px;
+    max-width: 100%;
+  }
+  .join-our-community {
+    height: 17.1px;
+    flex: 1;
+    position: relative;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 124px;
+  }
+  .vector-icon1 {
+    height: 20.2px;
+    width: 12.6px;
+    position: relative;
+  }
+  .ig-icon,
+  .youtube-icon {
+    height: 20.3px;
+    width: 21.5px;
+    position: relative;
+  }
+  .youtube-icon {
+    height: 25px;
+    width: 25.3px;
+    overflow: hidden;
+    flex-shrink: 0;
+    min-height: 25px;
+  }
+  .tiktok-icon {
+    height: 22px;
+    width: 23.2px;
+    position: relative;
+    object-fit: cover;
+  }
+  .vector-icon2 {
+    height: 21.2px;
+    width: 25.3px;
+    position: relative;
+  }
+  .frame-parent,
+  .nav-link {
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+  .nav-link {
+    width: 396px;
+    align-items: center;
+    justify-content: center;
+    padding: 0 7px 0 0;
+    gap: 0 18px;
+    font-size: 20px;
+  }
+  .frame-parent {
+    width: 1571px;
+    align-items: flex-end;
+    justify-content: space-between;
+    padding: 0 0 0 20px;
+    gap: 20px;
+  }
+  .home-page,
+  .home-page-inner {
+    display: flex;
+    align-items: flex-start;
+    box-sizing: border-box;
+  }
+  .home-page-inner {
+    align-self: stretch;
+    flex-direction: row;
+    justify-content: flex-end;
+    padding: 0 17px;
+    max-width: 100%;
+  }
+  .home-page {
+    width: 100%;
+    position: relative;
+    background-color: #fff;
+    overflow: hidden;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0px 0px;
+    gap: 1px 0;
+    letter-spacing: normal;
+    text-align: center;
+    font-size: 18px;
+    color: #000;
+    font-family: "Mukta Malar";
+  }
+  @media screen and (max-width: 1025px) {
+    .frame-parent {
+      flex-wrap: wrap;
+    }
+  }
+  @media screen and (max-width: 725px) {
+    .frame-group {
+      flex-wrap: wrap;
+      gap: 0 148px;
+    }
+  }
+  @media screen and (max-width: 450px) {
+    .frame-group {
+      gap: 0 148px;
+    }
+    .join-our-community {
+      font-size: 16px;
+    }
+    .nav-link {
+      flex-wrap: wrap;
+    }
+}
