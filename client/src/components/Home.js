@@ -13,7 +13,7 @@ function Home(){
 
     useEffect(() => {
       
-      fetch('/api/events')
+      fetch('https://chrisco-church-endpoints.onrender.com/events/all')
         .then(response => {
           if (!response.ok) {
             throw new Error('Error fetching events');
@@ -27,7 +27,7 @@ function Home(){
           console.error('Error fetching events:', error);
         });
 
-        fetch ('api/service-program')
+        fetch ('https://chrisco-church-endpoints.onrender.com/services/all')
         .then(response => {
           if (!response.ok) {
             throw new Error('Error fetching service program');
@@ -59,23 +59,22 @@ function Home(){
       </div>
       <div className="service-program">
         <h2>Service Program</h2>
-        <div className="columns">
-          {serviceProgram.map((column, index) => (
-            <div key={index} className="column">
-              <h3>{column.title}</h3>
-              <ul>
-                {column.items.map((item, index) => (
-                  <li key={index}>{item}</li>
-                ))}
-              </ul>
+        <div className="service">
+          {serviceProgram.map((service, index) => (
+            <div key={index} className="service-grid">
+              <h3>Start time: {service.start_time}</h3>
+              <p>{service.name}</p>
+              <p>{service.service_type}</p>
+              <p>End time: {service.end_time}</p>
             </div>
           ))}
         </div>
+      
       </div>
+      <h1><strong>Events</strong></h1>
       <div className="events">
-          <h2>Events</h2>
           {events.map(event => (
-            <div key={event.id} className="event">
+            <div key={event.id} className="event-grid">
               <h3>{event.title}</h3>
               <p>{event.description}</p>
               <button className="read-more">Read More</button>
