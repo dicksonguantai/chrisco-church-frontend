@@ -2,7 +2,8 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import Header from './Header';
 import Footer from './Footer';
-import { FaMapMarkerAlt, FaPhone, FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
+import SpotifyEmbeds from './Spotify';
+import Slider from 'react-slick';
 
 
 function Home(){
@@ -49,7 +50,7 @@ function Home(){
       
       <Header />
       <div className="image-container">
-        <img src={imageUrl} alt="Image" className="image" />
+        <img src={imageUrl} alt="background" className="image" />
         <div className="overlay">
           <h2 className="title">Welcome to Chrisco Central Church</h2>
           <h3>Join our community of Faith</h3>
@@ -69,8 +70,8 @@ function Home(){
             </div>
           ))}
         </div>
-      
       </div>
+      <SpotifyEmbeds/>
       <h1><strong>Events</strong></h1>
       <div className="events">
           {events.map(event => (
