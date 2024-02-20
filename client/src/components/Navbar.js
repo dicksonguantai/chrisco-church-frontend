@@ -10,12 +10,13 @@ const Navbar = () => {
         alt=""
         src="./logo.svg"
       />
+
       <div className="give-button-wrapper">
         <div className="give-button">
           <div className="nav-item-link">
             <div className="nav-list">
                 <Link to="/">Home</Link>
-                </div>
+              </div>
           </div>
           <div className="nav-item-link1">
             <div className="nav-list1">

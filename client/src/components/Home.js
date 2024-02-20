@@ -3,7 +3,8 @@ import { useState, useEffect } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import SpotifyEmbeds from './Spotify';
-import Slider from 'react-slick';
+// import Slider from 'react-slick';
+import Youtube from './Youtube';
 
 
 function Home(){
@@ -72,6 +73,7 @@ function Home(){
         </div>
       </div>
       <SpotifyEmbeds/>
+      <Youtube/>
       <h1><strong>Events</strong></h1>
       <div className="events">
           {events.map(event => (
