@@ -25,7 +25,6 @@
     float:left;
     font-size: 28px;
     color: white;
-    margin-bottom: 10px;
 }
 
 .btn-view-more {
@@ -52,4 +51,17 @@
       max-width: 33%;
     }
   }
-  
+  @media (max-width: 768px) {
+    .news-events-h3 {
+      font-size: 15px;
+
+     
+  }
+  .btn-view-more {
+    font-size: 15px;
+}
+.view-more{
+  align-items:center;
+
+}
+  }
