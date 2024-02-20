@@ -80,6 +80,7 @@ function Home(){
               <button className="read-more">Read More</button>
             </div>
           ))}
+        <button className="explore-more">Explore more</button>
       </div>
       
       <Footer/>
