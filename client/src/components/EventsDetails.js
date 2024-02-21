@@ -9,6 +9,8 @@ function EventsDetails({event}) {
                     <p className="event-id">{event.id}</p>
                     <h3 className="event-title">{event.title}</h3>
                 </div>
+                <p><strong>Theme: </strong>{event.theme}</p>
+                <p><strong>Scripture: </strong>{event.scripture}</p>
             </div>
             <div className="event-popup-location"><strong>Location: </strong>{event.location}</div>
             <p className="event-popup-date"><strong>Date: </strong>{event.date}</p>
