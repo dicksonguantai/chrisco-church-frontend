@@ -6,14 +6,14 @@
     flex-wrap: wrap;
     margin-right: 15px;
     margin-left: 15px;
-    padding: 3px;
+    padding: 10px;
   }
   .row-heading {
     display: flex;
     justify-content: space-between;
     align-items:center;
     margin:15px;
-    padding: 3px;
+    padding: 10px;
   }
   .events-row {
     background-color: #ec1d23;
@@ -50,13 +50,18 @@
       flex: 0 0 33%;
       max-width: 33%;
     }
-   
-  
   }
   @media (max-width: 768px) {
     .news-events-h3 {
       font-size: 15px;
+
      
   }
+  .btn-view-more {
+    font-size: 15px;
+}
+.view-more{
+  align-items:center;
+
+}
   }
-  
