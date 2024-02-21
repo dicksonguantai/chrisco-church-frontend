@@ -15,6 +15,7 @@ function Home(){
 
     const [events, setEvents] = useState([]);
     const [serviceProgram, setServiceProgram] = useState([]);
+    const [showFullText, setShowFullText] = useState(false);
 
     useEffect(() => {
       
@@ -47,7 +48,9 @@ function Home(){
         });
     }, [serviceProgram]);
 
-
+    const handleReadMoreClick = () => {
+      setShowFullText(true);
+    };
 
   return (
     <div>
@@ -84,8 +87,8 @@ function Home(){
             <div key={event.id} className="event-grid">
               <img src={event.event_img} alt={event.title}/>
               <h3>{event.title}</h3>
-              <p>{event.description}</p>
-              <button className="read-more">Read More</button>
+              {showFullText ? <p>{event.description}</p> : <p>{event.description.slice(0, 50)}</p>}
+              <button className="read-more" onClick={handleReadMoreClick}>Read More</button>
             </div>
           ))}
       </div>
