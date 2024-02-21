@@ -173,6 +173,24 @@ body {
   gap: 20px;
 }
 
+.service-footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.service-program{
+border: 1px solid black;
+margin-top: 15px;
+box-shadow:#1b1f83;
+border-radius: 10px;
+}
+
+.service-program h2{
+  text-align: center;
+  font-weight: bold;
+}
+
 .events {
   display: grid;
   grid-template-columns:repeat(3,1fr);
@@ -241,4 +259,49 @@ body {
 
 .events-h3{
   margin-top: 10px;
+}
+
+.event-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  font-weight: bold;
+  color: #1b1f83;
+}
+
+.event-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.event-title {
+  margin-top: 0;
+}
+
+.event-date {
+  margin-top: 0;
+}
+
+.event-description {
+  text-align: center;
+  margin-bottom: 15px;
+  border-bottom: 1px solid black;
+  padding: 10px;
+}
+
+.event-host{
+  margin-bottom: 15px;
+  padding: 10px;
+}
+
+.event-id{
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: #1b1f83;
+  color: white;
+  padding: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
 }

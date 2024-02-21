@@ -2,14 +2,10 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import Header from './Header';
 import Footer from './Footer';
-import SpotifyEmbeds from './Spotify';
-<<<<<<< HEAD
 import { Link } from 'react-router-dom';
-import { FaMapMarkerAlt, FaPhone, FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
-=======
+import SpotifyEmbeds from './Spotify';
 // import Slider from 'react-slick';
 import Youtube from './Youtube';
->>>>>>> 0ba7037f6e2cb1195f469da941f1c22c5489978e
 
 
 function Home(){
@@ -69,24 +65,22 @@ function Home(){
         <div className="service">
           {serviceProgram.map((service, index) => (
             <div key={index} className="service-grid">
-              <h3>Start time: {service.start_time}</h3>
-              <p>{service.name}</p>
-              <p>{service.service_type}</p>
-              <p>End time: {service.end_time}</p>
+              <strong><p>{service.name}</p></strong>
+              <div className='service-footer'>
+                <p>{service.start_time} - {service.end_time}</p>
+                <p>{service.service_type}</p>
+              </div>
             </div>
           ))}
         </div>
       </div>
       <SpotifyEmbeds/>
-<<<<<<< HEAD
-      <h1 id='event'><strong>Events</strong></h1>
-=======
       <Youtube/>
       <h1><strong>Events</strong></h1>
->>>>>>> 0ba7037f6e2cb1195f469da941f1c22c5489978e
       <div className="events">
           {events.map(event => (
             <div key={event.id} className="event-grid">
+              <img src={event.event_img} alt={event.title}/>
               <h3>{event.title}</h3>
               <p>{event.description}</p>
               <button className="read-more">Read More</button>

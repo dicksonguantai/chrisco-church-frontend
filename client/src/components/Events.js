@@ -35,11 +35,17 @@ function Events(){
             <div className="events">
             {Events.map(event =>(
                 <div key = {event.id} className="event-grid">
-                    <h3>{event.title}</h3>
-                    <p>{event.description}</p>
-                    {/* <p>{event.date}</p>
-                    <p>{event.time}</p>
-                    <p>{event.location}</p> */}
+                    <div className="event-header">
+                        <p className="event-id">{event.id}</p>
+                        <h3 className="event-title">{event.title}</h3>
+                        <p className="event-date">{event.date}</p>
+                    </div>
+                    <strong><p className="event-description">{event.description}</p></strong>
+                    <p className="event-host">{event.event_host}</p>
+                    <div className="event-footer">
+                        <p className="event-location">{event.location}</p>
+                        <p className="event-time">{event.start_time}-{event.end_time}</p>
+                    </div>
                 </div>
             ))}
             </div>
