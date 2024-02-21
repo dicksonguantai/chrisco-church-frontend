@@ -2,11 +2,13 @@ import React from "react";
 import { useState, useEffect } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
-
+import EventsDetails from "./EventsDetails";
 
 function Events(){
 
     const [Events, setEvents] = useState([]);
+    const [selectedEvent, setSelectedEvent] = useState(null);
+
     useEffect(() => {
         fetch('https://chrisco-church-endpoints.onrender.com/events/all')
         .then(response => {
@@ -23,6 +25,10 @@ function Events(){
         });
     }, []);
 
+    const handleEventClick = (event) => {
+    setSelectedEvent(event);
+  };
+
     return(
         <div>
             <Header />
@@ -34,21 +40,22 @@ function Events(){
             </div>
             <div className="events">
             {Events.map(event =>(
-                <div key = {event.id} className="event-grid">
+                <div key = {event.id} className="event-grid" onClick={() => handleEventClick(event)}>
                     <div className="event-header">
                         <p className="event-id">{event.id}</p>
                         <h3 className="event-title">{event.title}</h3>
                         <p className="event-date">{event.date}</p>
                     </div>
                     <strong><p className="event-description">{event.description}</p></strong>
-                    <p className="event-host">{event.event_host}</p>
+                    <p className="event-host"><strong>Host: </strong>{event.event_host}</p>
                     <div className="event-footer">
-                        <p className="event-location">{event.location}</p>
+                        <p className="event-location"><strong>Location: </strong>{event.location}</p>
                         <p className="event-time">{event.start_time}-{event.end_time}</p>
                     </div>
                 </div>
             ))}
             </div>
+            {selectedEvent && <EventsDetails event={selectedEvent} />}
             <div className="events-info">
             <strong><h2 className="events-h2">Don't miss the latest event's drop</h2></strong>
             <p>Be the first to know about our events. Sign up for special announcements, information</p>

@@ -305,3 +305,32 @@ border-radius: 10px;
   padding-left: 10px;
   padding-right: 10px;
 }
+
+.event-popup-header {
+  border: 1px solid black;
+  border-radius: 15px;
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+  margin-bottom: 15px;
+
+}
+
+.event-popup-location, .event-popup-date, .event-popup-time, .event-popup-host, .event-popup-description {
+  border: 1px solid black;
+  padding: 30px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.event-popup h1{
+  text-align: center;
+  color: #1b1f83; 
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.event-popup {
+  margin-right: 150px;
+  margin-left: 150px;
+}
