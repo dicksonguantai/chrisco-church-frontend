@@ -1,9 +1,12 @@
 import React from 'react';
 import BlogCard from './BlogCard';
 import Header from './Header'
+import Footer from './Footer'
 import './blogs.css'
 
 function Blogs() {
+  
+  
   return (
     <>
     <Header/>
@@ -17,6 +20,7 @@ function Blogs() {
     <BlogCard/>
     <BlogCard/>
     </div>
+    <Footer/>
     </>
     
   );

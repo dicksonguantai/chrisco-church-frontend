@@ -5,10 +5,10 @@ import { CiLocationOn } from "react-icons/ci";
 import { SlSocialFacebook,SlSocialYoutube } from "react-icons/sl";
 import { PiTiktokLogo } from "react-icons/pi";
 import { FaXTwitter } from "react-icons/fa6";
-
 import Navbar from "./Navbar";
 
 const HomePage = () => {
+  
   return (
     <div className="home-page">
       <div className="home-page-inner">
@@ -43,12 +43,11 @@ const HomePage = () => {
             <a href="https://x.com/chrisconairobi?t=3ZQ1zpqWYmXwUjIEyEuvaQ&s=09">
             <FaXTwitter />
             </a>
-
-
+            
           </div>
         </div>
       </div>
-      <Navbar/>
+      <Navbar />
     </div>
   );
 };

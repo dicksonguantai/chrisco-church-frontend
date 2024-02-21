@@ -132,6 +132,10 @@
     color: #000;
     font-family: "Mukta Malar";
   }
+  @media screen and (min-width: 768px) {
+  nav {
+    display: none;
+  }}
   @media screen and (max-width: 1025px) {
     .frame-parent {
       flex-wrap: wrap;
@@ -153,4 +157,82 @@
     .nav-link {
       flex-wrap: wrap;
     }
+}
+
+.menu-icon {
+  display: none;
+}
+
+.menu-icon span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+  margin: 5px;
+  transition: transform 0.4s, opacity 0.4s;
+}
+
+.menu-icon.open span:nth-child(1) {
+  transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.menu-icon.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-icon.open span:nth-child(3) {
+  transform: rotate(45deg) translate(-5px, -6px);
+}
+.sm-buttons{
+  margin-bottom: 10px;
+  
+}
+@media screen and (max-width: 768px) {
+  .navbar {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: absolute;
+    background-color: #ffffff;
+    top: calc(90% + 50px); /* Adjust the distance below the menu icon */
+    left: 0;
+    z-index: 100;
+    padding: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for better visibility */
+    transition: opacity 0.3s, visibility 0.3s;
+    opacity: 0;
+    visibility: hidden;
+  }
+  
+  .navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .navbar ul li {
+    margin-bottom: 10px;
+  }
+  .navbar ul li a {
+    text-decoration: none;
+    color: #333;
+  }
+  .navbar ul li:last-child {
+    margin-bottom: 0;
+  }
+  .menu-icon {
+    display: block;
+    cursor: pointer;
+  }
+  .navbar.open {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+
+  }
+  .nav-link-krgcjpg-parent{
+    margin-top: 20px;
+  }
+  
 }
