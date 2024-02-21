@@ -2,6 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import Header from './Header';
 import Footer from './Footer';
+import { Link } from 'react-router-dom';
 import { FaMapMarkerAlt, FaPhone, FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
 
 
@@ -70,7 +71,7 @@ function Home(){
           ))}
         </div>
       </div>
-      <SpotifyEmbeds/>
+      {/* <SpotifyEmbeds/> */}
       <h1><strong>Events</strong></h1>
       <div className="events">
           {events.map(event => (
