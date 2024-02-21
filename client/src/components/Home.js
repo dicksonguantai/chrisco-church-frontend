@@ -2,7 +2,9 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import Header from './Header';
 import Footer from './Footer';
-import { FaMapMarkerAlt, FaPhone, FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
+import SpotifyEmbeds from './Spotify';
+// import Slider from 'react-slick';
+import Youtube from './Youtube';
 
 
 function Home(){
@@ -71,6 +73,7 @@ function Home(){
         </div>
       </div>
       <SpotifyEmbeds/>
+      <Youtube/>
       <h1><strong>Events</strong></h1>
       <div className="events">
           {events.map(event => (

@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://cdn.jsdelivr.net/npm/themify-icons/css/themify-icons.css');
 
 body {
   margin: 0;
