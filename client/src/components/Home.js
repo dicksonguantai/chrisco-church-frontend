@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import SpotifyEmbeds from './Spotify';
+import { Link } from 'react-router-dom';
 import { FaMapMarkerAlt, FaPhone, FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
 
 
@@ -41,7 +42,7 @@ function Home(){
         .catch(error => {
           console.error('Error fetching service program:', error);
         });
-    }, []);
+    }, [serviceProgram]);
 
 
 
@@ -72,7 +73,7 @@ function Home(){
         </div>
       </div>
       <SpotifyEmbeds/>
-      <h1><strong>Events</strong></h1>
+      <h1 id='event'><strong>Events</strong></h1>
       <div className="events">
           {events.map(event => (
             <div key={event.id} className="event-grid">
@@ -81,8 +82,11 @@ function Home(){
               <button className="read-more">Read More</button>
             </div>
           ))}
-        <button className="explore-more">Explore more</button>
       </div>
+        <Link to="/events">
+        <button className="explore-more">Explore more</button>
+        </Link>
+      
       
       <Footer/>
     </div>

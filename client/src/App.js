@@ -5,6 +5,7 @@ import Home from './components/Home';
 import Departments from './components/Departments';
 // import Services from './components/Services';
 // import Contact from './components/Contact';
+import Events from './components/Events';
 import {Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
           <Route path="/departments" element={<Departments />} />
           {/* <Route path="/services" element={<Services />} /> */}
           {/* <Route path="/contact" element={<Contact />} /> */}
+          <Route path='/events' element={<Events/>}/>
           {/* Add more routes as needed */}
         </Routes>
       </div>
