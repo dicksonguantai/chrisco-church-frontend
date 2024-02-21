@@ -1,7 +1,7 @@
 import './App.css';
 import React from 'react';
 import Home from './components/Home';
-// import About from './components/About';
+import AboutUs from './components/AboutUs';
 import Departments from './components/Departments';
 // import Services from './components/Services';
 // import Contact from './components/Contact';
@@ -13,7 +13,7 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" element={<Home />} />
-          {/* <Route path="/about" element={<About />} /> */}
+          <Route path="/about" element={<AboutUs />} /> 
           <Route path="/departments" element={<Departments />} />
           {/* <Route path="/services" element={<Services />} /> */}
           {/* <Route path="/contact" element={<Contact />} /> */}
