@@ -2,10 +2,14 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import Header from './Header';
 import Footer from './Footer';
-import { Link } from 'react-router-dom';
 import SpotifyEmbeds from './Spotify';
+<<<<<<<<< Temporary merge branch 1
 // import Slider from 'react-slick';
 import Youtube from './Youtube';
+=========
+import { Link } from 'react-router-dom';
+import { FaMapMarkerAlt, FaPhone, FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
+>>>>>>>>> Temporary merge branch 2
 
 
 function Home(){
@@ -75,6 +79,7 @@ function Home(){
         </div>
       </div>
       <SpotifyEmbeds/>
+<<<<<<<<< Temporary merge branch 1
       <Youtube/>
       <h1><strong>Events</strong></h1>
       <div className="events">
