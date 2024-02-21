@@ -1,17 +1,22 @@
 import React from 'react';
 import './spotify.css'
+import { BsChevronDoubleRight } from "react-icons/bs";
+
 const SpotifyEmbeds = () => {
+const handleViewMoreClick = () => {
+        window.open('https://open.spotify.com/show/7CcFvqZM7U0K0m6BouNfHe?si=a92d16d45d1a45eb&nd=1&dlsi=c1f2c99c57de4378', '_blank');
+      };
   return (
     <div className=''>
-    <div class="row events-row d-flex align-items-center">
-            <div class="col-md-8 col-6">
-                <h3 class="news-events-h3">We are on Spotify</h3>
+    <div class="row-heading events-row flex align-items-center">
+        <div class="col-md-4">
+            <h3 class="news-events-h3">We are on Spotify</h3>
+        </div>
+        <div class="col-md-4">
+            <div class="view-more">
+            <button type="button" class="btn btn-view-more" onClick={handleViewMoreClick} >View More<i className=" btn-view-more ti-angle-double-right"><BsChevronDoubleRight /></i></button>
             </div>
-            <div class="col-md-4 col-6">
-                <div class="">
-                    <button type="button" class="btn btn-view-more">View More <i class="ti-angle-double-right"></i></button>
-                </div>
-            </div>
+        </div>
     </div> 
     <div className="row">
       <div className="col-md-4">

@@ -3,8 +3,13 @@ import { useState, useEffect } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import SpotifyEmbeds from './Spotify';
+<<<<<<< HEAD
 import { Link } from 'react-router-dom';
 import { FaMapMarkerAlt, FaPhone, FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
+=======
+// import Slider from 'react-slick';
+import Youtube from './Youtube';
+>>>>>>> 0ba7037f6e2cb1195f469da941f1c22c5489978e
 
 
 function Home(){
@@ -73,7 +78,12 @@ function Home(){
         </div>
       </div>
       <SpotifyEmbeds/>
+<<<<<<< HEAD
       <h1 id='event'><strong>Events</strong></h1>
+=======
+      <Youtube/>
+      <h1><strong>Events</strong></h1>
+>>>>>>> 0ba7037f6e2cb1195f469da941f1c22c5489978e
       <div className="events">
           {events.map(event => (
             <div key={event.id} className="event-grid">

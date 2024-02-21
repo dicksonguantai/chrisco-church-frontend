@@ -3,7 +3,9 @@ import React from 'react';
 import Home from './components/Home';
 // import About from './components/About';
 import Departments from './components/Departments';
-// import Services from './components/Services';
+import Blogs from './components/Blogs';
+import Blog from './components/Blog';
+
 // import Contact from './components/Contact';
 import Events from './components/Events';
 import {Routes, Route } from 'react-router-dom';
@@ -16,7 +18,8 @@ function App() {
           <Route path="/" element={<Home />} />
           {/* <Route path="/about" element={<About />} /> */}
           <Route path="/departments" element={<Departments />} />
-          {/* <Route path="/services" element={<Services />} /> */}
+          <Route path="/blogs" element={<Blogs />} />
+          <Route path="/blog/" element={<Blog />} />
           {/* <Route path="/contact" element={<Contact />} /> */}
           <Route path='/events' element={<Events/>}/>
           {/* Add more routes as needed */}
