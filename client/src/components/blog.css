@@ -48,4 +48,22 @@
   .comments {
     margin-left: auto;
   }
+.blogs-cards {
+  display: flex;
+  flex-wrap: wrap; 
+  margin-right: 15px;
+  margin-left: 15px;
+  padding: 20px;
+  justify-content: left;
+
+}
+.blog-card {
+  margin:15px;
+  padding: 20px;
+  
+
+}
+.read-more{
+  background-color: #163691;
+}
   

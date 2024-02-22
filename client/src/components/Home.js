@@ -5,6 +5,9 @@ import Footer from './Footer';
 import SpotifyEmbeds from './Spotify';
 // import Slider from 'react-slick';
 import Youtube from './Youtube';
+import { Link } from 'react-router-dom';
+import { FaMapMarkerAlt, FaPhone, FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
+
 
 
 function Home(){
@@ -12,6 +15,7 @@ function Home(){
 
     const [events, setEvents] = useState([]);
     const [serviceProgram, setServiceProgram] = useState([]);
+    const [showFullText, setShowFullText] = useState(false);
 
     useEffect(() => {
       
@@ -42,9 +46,11 @@ function Home(){
         .catch(error => {
           console.error('Error fetching service program:', error);
         });
-    }, []);
+    }, [serviceProgram]);
 
-
+    const handleReadMoreClick = () => {
+      setShowFullText(true);
+    };
 
   return (
     <div>
@@ -64,10 +70,11 @@ function Home(){
         <div className="service">
           {serviceProgram.map((service, index) => (
             <div key={index} className="service-grid">
-              <h3>Start time: {service.start_time}</h3>
-              <p>{service.name}</p>
-              <p>{service.service_type}</p>
-              <p>End time: {service.end_time}</p>
+              <strong><p>{service.name}</p></strong>
+              <div className='service-footer'>
+                <p>{service.start_time} - {service.end_time}</p>
+                <p>{service.service_type}</p>
+              </div>
             </div>
           ))}
         </div>
@@ -78,13 +85,17 @@ function Home(){
       <div className="events">
           {events.map(event => (
             <div key={event.id} className="event-grid">
+              <img src={event.event_img} alt={event.title}/>
               <h3>{event.title}</h3>
-              <p>{event.description}</p>
-              <button className="read-more">Read More</button>
+              {showFullText ? <p>{event.description}</p> : <p>{event.description.slice(0, 50)}</p>}
+              <button className="read-more" onClick={handleReadMoreClick}>Read More</button>
             </div>
           ))}
-        <button className="explore-more">Explore more</button>
       </div>
+        <Link to="/events">
+        <button className="explore-more">Explore more</button>
+        </Link>
+      
       
       <Footer/>
     </div>
