@@ -8,6 +8,7 @@ import Blog from './components/Blog';
 import History from './components/History';
 import Login from './components/Login';
 import Signup from './components/Signup';
+import Slider from './components/Slider1';
 
 // import Contact from './components/Contact';
 import Events from './components/Events';
@@ -25,6 +26,8 @@ function App() {
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/blog/" element={<Blog />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/slider" element={<Slider />} />
+
           <Route path="/signup" element={<Signup />} />
           {/* <Route path="/contact" element={<Contact />} /> */}
           <Route path='/events' element={<Events/>}/>

@@ -101,7 +101,7 @@ body {
 .image-container {
     position: relative;
     width: 100%;  
-    height: 33.33vh;
+    height: 40.33vh;
     overflow: hidden;
   }
   
@@ -124,8 +124,9 @@ body {
   }
   
   
-  .title {
+  .title-slider {
     margin-top: 0;
+    font-size: 40px;
   }
   
   .description {
@@ -133,6 +134,8 @@ body {
   }
   
   .read-more {
+    margin-top: 10px;
+
     background-color: #007bff;
     color: white;
     border: none;
