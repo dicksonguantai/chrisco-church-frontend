@@ -46,7 +46,7 @@ const Navbar = () => {
           </div>
           <div className="nav-item-link1">
             <div className="nav-list1">
-            <Link to= "/about-us">About Us</Link>
+            <Link to= "/about-us">AboutUs</Link>
             </div>
           </div>
           <div className="nav-item-link2">
