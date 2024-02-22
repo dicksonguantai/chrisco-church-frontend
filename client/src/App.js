@@ -8,6 +8,7 @@ import Blog from './components/Blog';
 import History from './components/History'
 
 // import Contact from './components/Contact';
+import Events from './components/Events';
 import {Routes, Route } from 'react-router-dom';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/blog/" element={<Blog />} />
           {/* <Route path="/contact" element={<Contact />} /> */}
+          <Route path='/events' element={<Events/>}/>
           {/* Add more routes as needed */}
         </Routes>
       </div>
