@@ -54,7 +54,7 @@ function AboutUs() {
       </div>
 
       < div className= "faith ">
-       <h2> OUR FAITH</h2>
+       <h1> OUR FAITH</h1>
        <p>At Chrisco Central church, we offer a variety of services and programs to meet the spiritual needs of the congregation. Our sunday service includes uplift music, inspiring sermons and opportunities for personal growth and connection. We also have programs for children, youth and adults throughout the week.</p>
         <img src="faith.png"  alt=" faith stone" className="faith picture"  />
       </div>
@@ -62,7 +62,7 @@ function AboutUs() {
       <div class="separator"></div>
 
        <div className="word">
-        <h2>THE WORD</h2>
+        <h1>THE WORD</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed in mauris congue, dignissim nulla et tincidunt velit. Sed libero arcu, convallis in eros vel, egestus congue nulla.Sed nec dictum nulla.Nulla facilisi.Aliquam erat volutpat. Sed non quam arcu. Donec euismod mauris. </p>
             <img src="bible.png" alt="bible picture"   className="bible" />
         </div>
@@ -70,7 +70,7 @@ function AboutUs() {
         <div class="separator"></div>
 
         <div className="trinity">
-        <h2>THE TRINITY</h2>
+        <h1>THE TRINITY</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed in mauris congue, dignissim nulla et tincidunt velit. Sed libero arcu, convallis in eros vel, egestus congue nulla.Sed nec dictum nulla.Nulla facilisi.Aliquam erat volutpat. Sed non quam arcu. Donec euismod mauris.</p>
             <img src="trinity.png" alt="trinity picture" className="trinity picture" />
         </div>
@@ -78,7 +78,7 @@ function AboutUs() {
         <div class="separator"></div>
 
         <div className="baptism">
-        <h2>THE BAPTISM</h2>
+        <h1>THE BAPTISM</h1>
         <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed in mauris congue, dignissim nulla et tincidunt velit. Sed libero arcu, convallis in eros vel, egestus congue nulla.Sed nec dictum nulla.Nulla facilisi.Aliquam erat volutpat. Sed non quam arcu. Donec euismod mauris.</p>
             <img src="baptism.png" alt="baptism picture"  className="baptism picture"  />
          </div>
