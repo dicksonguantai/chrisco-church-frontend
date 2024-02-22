@@ -1,10 +1,11 @@
 import './App.css';
 import React from 'react';
 import Home from './components/Home';
-// import About from './components/About';
+ import AboutUs from './components/AboutUs';
 import Departments from './components/Departments';
 import Blogs from './components/Blogs';
 import Blog from './components/Blog';
+import History from './components/History'
 
 // import Contact from './components/Contact';
 import {Routes, Route } from 'react-router-dom';
@@ -15,7 +16,8 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" element={<Home />} />
-          {/* <Route path="/about" element={<About />} /> */}
+          <Route path="/about-us" element={<AboutUs />} /> 
+          <Route path="/history" element={<History />} />
           <Route path="/departments" element={<Departments />} />
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/blog/" element={<Blog />} />
