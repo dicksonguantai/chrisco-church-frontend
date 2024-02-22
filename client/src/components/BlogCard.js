@@ -1,8 +1,12 @@
-
-
 import { Card,Button } from 'flowbite-react';
+import { useNavigate } from 'react-router-dom';
 
 function BlogCard() {
+  const navigate = useNavigate()
+  const handleReadMore = () =>{
+    navigate('/blog')
+    
+  }
   return (
     <Card
       className="max-w-sm blog-card"
@@ -15,7 +19,7 @@ function BlogCard() {
       <p className="font-normal text-gray-700 dark:text-gray-400">
         Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.
       </p>
-      <Button className='read-more'>
+      <Button className='read-more' onClick={handleReadMore}>
         Read more
         <svg className="-mr-1 ml-2 h-4 w-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
           <path

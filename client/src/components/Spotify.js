@@ -10,11 +10,11 @@ const handleViewMoreClick = () => {
     <div className=''>
     <div class="row-heading events-row flex align-items-center">
         <div class="col-md-4">
-            <h3 class="news-events-h3">We are on Spotify</h3>
+            <h3 className="news-events-h3">We are on Spotify</h3>
         </div>
         <div class="col-md-4">
             <div class="view-more">
-            <button type="button" class="btn btn-view-more" onClick={handleViewMoreClick} >View More<i className=" btn-view-more ti-angle-double-right"><BsChevronDoubleRight /></i></button>
+            <button type="button" className="btn btn-view-more" onClick={handleViewMoreClick} >View More<i className=" btn-view-more ti-angle-double-right"><BsChevronDoubleRight /></i></button>
             </div>
         </div>
     </div> 
