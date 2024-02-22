@@ -10,7 +10,7 @@ const SignUp = () => {
   return (
     <div className="signup-container">
       <img src="./logo.svg" alt="Logo" className="signup-logo" />
-      <h6 className="signup-header">Already have an account? <a href="#" className="signin-link">Log in here</a></h6>
+      <h6 className="signup-header">Already have an account? <a href="/login" className="signin-link">Log in here</a></h6>
       <form>
         <div className="signup-row">
           <div className="signup-column">
