@@ -26,7 +26,7 @@ const Navbar = () => {
         <li><Link to="/">Home</Link></li>
         <li><Link to="/about-us">About Us</Link></li>
         <li><Link to="/departments">Departments</Link></li>
-        <li><Link to="/services">Services</Link></li>
+        <li><Link to="/blogs">Services</Link></li>
         <li><Link to="/contact-us">Contact Us</Link></li>
         <button className="give login-text nav-container sm-buttons">
             <b className="login">Give</b>
@@ -57,7 +57,7 @@ const Navbar = () => {
           </div>
           <div className="nav-list3">
             
-          <Link to= "/services">Services</Link>
+          <Link to= "/blogs">Services</Link>
           </div>
           <div className="nav-item-link3">
             <div className="nav-list4">

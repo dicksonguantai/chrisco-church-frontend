@@ -103,6 +103,7 @@ body {
     width: 100%;  
     height: 40.33vh;
     overflow: hidden;
+    
   }
   
   .image {
@@ -174,6 +175,7 @@ body {
   display: grid;
   grid-template-columns:repeat(3,1fr);
   gap: 20px;
+  margin-top: 10px;
 }
 
 .service-footer{
@@ -184,7 +186,7 @@ body {
 
 .service-program{
 border: 1px solid black;
-margin-top: 15px;
+margin-top: 25px;
 box-shadow:#1b1f83;
 border-radius: 10px;
 }

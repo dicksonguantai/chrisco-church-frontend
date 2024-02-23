@@ -7,10 +7,10 @@ export default function Slider1() {
   var settings = {
     dots: true,
     infinite: true,
-    arrows:true,
+    arrows: true,
     speed: 1000,
     slidesToShow: 1,
-    slidesToScroll: 1
+    slidesToScroll: 1,
   };
   return (
     <Slider {...settings}>
