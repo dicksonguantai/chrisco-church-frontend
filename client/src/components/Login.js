@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './login.css';
 
 const LogIn = () => {
@@ -10,7 +11,7 @@ const LogIn = () => {
   return (
     <div className="login-container">
       <img src="./logo.svg" alt="Logo" className="login-logo" />
-      <h6 className="signup-header">Don't have an account yet? <a href="/" className="signup-link">Sign up here</a></h6>
+      <h6 className="signup-header">Don't have an account yet? <Link to="/signup" className="signup-link">Sign up here</Link></h6>
       <form>
         <div>
           <input 
