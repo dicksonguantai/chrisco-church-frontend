@@ -8,6 +8,7 @@ import Blog from './components/Blog';
 import History from './components/History';
 import Login from './components/Login';
 import Signup from './components/Signup';
+import Dashboard from './components/Dashboard';
 
 // import Contact from './components/Contact';
 import Events from './components/Events';
@@ -26,6 +27,7 @@ function App() {
           <Route path="/blog/" element={<Blog />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
+          <Route path="/dashboard" element={<Dashboard />} />
           {/* <Route path="/contact" element={<Contact />} /> */}
           <Route path='/events' element={<Events/>}/>
           {/* Add more routes as needed */}
