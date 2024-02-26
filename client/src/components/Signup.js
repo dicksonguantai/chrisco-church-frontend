@@ -60,6 +60,7 @@ const SignUp = () => {
   return (
     <div className="signup-container">
       <img src="./logo.svg" alt="Logo" className="signup-logo" />
+
       <h6 className="signup-header">Already have an account? <Link to="/login" className="signup-link">Log in here</Link></h6>
       <form>
         <div className="signup-row">
