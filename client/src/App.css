@@ -18,14 +18,14 @@ h1{
 }
 
 
-/* .header {
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px;
     background-color: #fef9f9;
     color: #1b1f83;
-} */
+}
 
 .left-container {
     display: flex;
@@ -109,7 +109,7 @@ h1{
     overflow: hidden;
     
   }
-  
+   */
   .image {
     width: 100%;
     height: 100%;
@@ -121,10 +121,10 @@ h1{
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: transparent;
     color: white;
     padding: 20px;
-    opacity: 1;
+    opacity: 0;
     transition: opacity 0.3s ease;
   }
   
@@ -178,13 +178,21 @@ h1{
 .service {
   display: grid;
   grid-template-columns:repeat(3,1fr);
-  gap: 5px;
+  /* gap: 5px; */
+  border-top: 1px solid black;
+  padding: 10px;
+  margin-top: 5px;
 }
+
 
 .service-footer{
   display: flex;
-  justify-content: space-between;
+  justify-content:flex-start;
   align-items: center;
+}
+
+.service-time{
+ margin-right: 10px;
 }
 
 .service-program{
@@ -211,8 +219,8 @@ border-radius: 10px;
 
 .service-grid {
   /* border: 1px solid #ccc; */
-  /* padding: 5px;
-} */
+  padding: 5px;
+}
 
 .event-grid {
   border: 1px solid #ccc;
@@ -326,8 +334,8 @@ border-radius: 10px;
 .event-popup-header {
   border: 1px solid black;
   border-radius: 15px;
-  /* display: flex;
-  justify-content: space-between; */
+  display: flex;
+  justify-content: space-between;
   padding: 30px;
   margin-bottom: 15px;
 
@@ -582,4 +590,176 @@ li {
 .event-popup {
   margin-right: 150px;
   margin-left: 150px;
+}
+
+.container-banner-container-rounded{
+  background-image: url("/home/davy/Development/code/Capstone-Project/chrisco-church-frontend/client/public/Images/20230818_142741.jpg");
+  height: 500px;
+  background-size: cover;
+  background-attachment: fixed;
+  margin: 20px;
+  border-radius: 20px;
+}
+
+.container-banner-container-round{
+  background-image: url("/home/davy/Development/code/Capstone-Project/chrisco-church-frontend/client/public/Images/20230827_124235.jpg");
+  height: 500px;
+  background-size: cover;
+  background-attachment: fixed;
+  margin: 20px;
+  border-radius: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left-container {
+    margin-bottom: 20px;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-item {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .button {
+    margin-left: 0;
+  }
+
+  .footer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-column {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+
+  .back-to-top {
+    bottom: 10px;
+    right: 10px;
+  }
+
+  .departments {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .service {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  .events {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 10px;
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .service-program {
+    margin-top: 10px;
+  }
+
+  .event-grid {
+    padding: 10px;
+  }
+
+  .event-popup {
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+
+  .container-banner-container-rounded {
+    height: 300px;
+  }
+
+  .container-banner-container-round {
+    height: 300px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .header {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .nav-links {
+    display: flex;
+  }
+
+  .nav-item {
+    display: inline;
+    margin-bottom: 0;
+  }
+
+  .button {
+    margin-left: 10px;
+  }
+
+  .footer {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .footer-column {
+    margin-right: 20px;
+    margin-bottom: 0;
+  }
+
+  .back-to-top {
+    bottom: 20px;
+    right: 20px;
+  }
+
+  .departments {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
+  }
+
+  .service {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .events {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .service-program {
+    margin-top: 20px;
+  }
+
+  .event-grid {
+    padding: 20px;
+  }
+
+  .event-popup {
+    margin-right: 30px;
+    margin-left: 30px;
+  }
+
+  .container-banner-container-rounded {
+    height: 400px;
+  }
+
+  .container-banner-container-round {
+    height: 400px;
+  }
 }

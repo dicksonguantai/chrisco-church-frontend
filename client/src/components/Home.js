@@ -93,7 +93,7 @@ function Home(){
             <div key={index} className="service-grid">
               <strong><p>{service.name}</p></strong>
               <div className='service-footer'>
-                <p>{service.start_time} - {service.end_time}</p>
+                <p className="service-time">{service.start_time} - {service.end_time}</p>
                 <p>{service.service_type}</p>
               </div>
             </div>
@@ -101,7 +101,11 @@ function Home(){
         </div>
       </div>
       <SpotifyEmbeds/>
+      <div class="container-banner-container-rounded">
+      </div>
       <Youtube/>
+      <div class="container-banner-container-round">
+      </div>
       <h1 className='events-h1'><strong>Events</strong></h1>
       <div className="events">
           {events.map(event => (
