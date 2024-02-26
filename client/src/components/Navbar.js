@@ -67,10 +67,11 @@ const Navbar = () => {
           <button className="give login-text nav-container">
             <b className="login">Give</b>
           </button>
-
+          <Link to="/login">
           <button className="nav-container">
             <b className="login">Login</b>
           </button>
+          </Link>
         </div>
       </div>
     </header>
