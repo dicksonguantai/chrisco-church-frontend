@@ -198,7 +198,7 @@
     background-color: #ffffff;
     top: calc(90% + 50px); /* Adjust the distance below the menu icon */
     left: 0;
-    z-index: 100;
+    z-index: 90;
     padding: 10px;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for better visibility */
     transition: opacity 0.3s, visibility 0.3s;

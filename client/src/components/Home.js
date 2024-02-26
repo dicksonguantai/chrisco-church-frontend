@@ -3,10 +3,9 @@ import { useState, useEffect } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import SpotifyEmbeds from './Spotify';
-// import Slider from 'react-slick';
+import Slider from './Slider1';
 import Youtube from './Youtube';
 import { Link } from 'react-router-dom';
-import { FaMapMarkerAlt, FaPhone, FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
 
 
 
@@ -56,7 +55,8 @@ function Home(){
     <div>
       
       <Header />
-      <div className="image-container">
+      <Slider />
+      {/* <div className="image-container">
         <img src={imageUrl} alt="background" className="image" />
         <div className="overlay">
           <h2 className="title">Welcome to Chrisco Central Church</h2>
@@ -64,7 +64,7 @@ function Home(){
           <p className="description">Loving God, loving others and serving the world through the words of the Lord</p>
           <button className="read-more">Read More</button>
         </div>
-      </div>
+      </div> */}
       <div className="service-program">
         <h2>Service Program</h2>
         <div className="service">

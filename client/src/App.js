@@ -13,6 +13,8 @@ import Dashboard from './components/Dashboard';
 // import Contact from './components/Contact';
 import Events from './components/Events';
 import {Routes, Route } from 'react-router-dom';
+import Component from './components/Component';
+import EditableTable from './components/EditableTable';
 
 function App() {
   return (
@@ -26,6 +28,9 @@ function App() {
           <Route path="/blogs" element={<Blogs />} />
           <Route path="/blog/" element={<Blog />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/component" element={<Component />} />
+          <Route path="/table" element={<EditableTable />} />
+
           <Route path="/signup" element={<Signup />} />
           <Route path="/dashboard" element={<Dashboard />} />
           {/* <Route path="/contact" element={<Contact />} /> */}
