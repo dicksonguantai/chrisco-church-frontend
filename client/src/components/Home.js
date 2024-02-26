@@ -3,15 +3,17 @@ import { useState, useEffect } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import SpotifyEmbeds from './Spotify';
-// import Slider from 'react-slick';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import Youtube from './Youtube';
 import { Link } from 'react-router-dom';
-import { FaMapMarkerAlt, FaPhone, FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
 
 
 
 function Home(){
-    const imageUrl = "/Images/Homepic.png"; 
+    const imageUrl2 = "/Images/Homepic.png"; 
+    const imageUrl = "/Images/20230827_124235.jpg"; 
 
     const [events, setEvents] = useState([]);
     const [serviceProgram, setServiceProgram] = useState([]);
@@ -51,22 +53,41 @@ function Home(){
     const handleReadMoreClick = () => {
       setShowFullText(true);
     };
+    
+    var settings = {
+      dots: true,
+      infinite: true,
+      arrows: true,
+      speed: 1000,
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      vertical: false,
+      verticalSwiping: false,
+    };
 
   return (
     <div>
       
       <Header />
-      <div className="image-container">
-        <img src={imageUrl} alt="background" className="image" />
-        <div className="overlay">
-          <h2 className="title">Welcome to Chrisco Central Church</h2>
-          <h3>Join our community of Faith</h3>
-          <p className="description">Loving God, loving others and serving the world through the words of the Lord</p>
-          <button className="read-more">Read More</button>
+      <Slider {...settings}>
+        <div className="image-container">
+          <img src={imageUrl} alt="background" className="image" />
+          <div className="overlay">
+            <h2 className="title">Welcome to Chrisco Central Church</h2>
+            <h3>Join our community of Faith</h3>
+            <p className="description">Loving God, loving others and serving the world through the words of the Lord</p>
+            <button className="read-more">Read More</button>
+          </div>
         </div>
-      </div>
+        <div className="image-container">
+        <img src={imageUrl2} alt="background" className="image" />
+        </div>
+        <div className="image-container">
+          <img src={imageUrl} alt="background" className="image" />
+        </div>
+      </Slider>
       <div className="service-program">
-        <h2>Service Program</h2>
+        <h1><strong>Service Program</strong></h1>
         <div className="service">
           {serviceProgram.map((service, index) => (
             <div key={index} className="service-grid">
@@ -81,7 +102,7 @@ function Home(){
       </div>
       <SpotifyEmbeds/>
       <Youtube/>
-      <h1><strong>Events</strong></h1>
+      <h1 className='events-h1'><strong>Events</strong></h1>
       <div className="events">
           {events.map(event => (
             <div key={event.id} className="event-grid">
