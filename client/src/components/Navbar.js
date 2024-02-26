@@ -8,6 +8,11 @@ const Navbar = () => {
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  const handleLogin = () => {
+    window.location.href = "/login";
+  };
+
   return (
     <header className="nav-link-krgcjpg-parent">
       <img
@@ -69,7 +74,7 @@ const Navbar = () => {
           </button>
 
           <button className="nav-container">
-            <b className="login">Login</b>
+            <b className="login" onClick={handleLogin}>Login</b>
           </button>
         </div>
       </div>
