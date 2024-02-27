@@ -61,7 +61,7 @@ const SignUp = () => {
     <div className="signup-container">
       <img src="./logo.svg" alt="Logo" className="signup-logo" />
 
-      <h6 className="signup-header">Already have an account? <Link to="/login" className="signup-link">Log in here</Link></h6>
+      <h6 className="signup-header">Already have an account? <a className="signup-link">switch to Log in below</a></h6>
       <form>
         <div className="signup-row">
           <div className="signup-column">
