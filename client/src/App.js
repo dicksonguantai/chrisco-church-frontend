@@ -9,6 +9,7 @@ import History from './components/History';
 import Login from './components/Login';
 import Signup from './components/Signup';
 import Dashboard from './components/Dashboard';
+import ResetPassword from './components/ResetPassword';
 
 // import Contact from './components/Contact';
 import Events from './components/Events';
@@ -33,6 +34,7 @@ function App() {
 
           <Route path="/signup" element={<Signup />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/reset-password" element={<ResetPassword />} />
           {/* <Route path="/contact" element={<Contact />} /> */}
           <Route path='/events' element={<Events/>}/>
           {/* Add more routes as needed */}

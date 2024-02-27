@@ -46,7 +46,7 @@ const LogIn = ({ onClose }) => {
     <div className="login-container">
       <img src="./logo.svg" alt="Logo" className="login-logo" />
 
-      <h6 className="signup-header">Don't have an account yet? <Link to="/signup" className="signup-link">Sign up here</Link></h6>
+      <h6 className="signup-header">Don't have an account yet? <a  className="signup-link">switch to Sign up below</a></h6>
       <form>
         <div>
           <input 
@@ -67,9 +67,6 @@ const LogIn = ({ onClose }) => {
             onChange={(e) => setPassword(e.target.value)} 
             required  
           />
-          <div className="password-help">
-            <a href="/" onClick={handleForgotPassword}>Forgot your password?</a>
-          </div>
         </div>
         <button className="login-button" type="submit" onClick={handleLogin}>Log In</button>
       </form>
