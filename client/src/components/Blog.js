@@ -32,7 +32,7 @@ const Blog = () => {
       };
     
       const handleDeleteComment = (commentId) => {
-        fetch(`https://chrisco-church-endpoints.onrender.com/comments/${commentId}`, {
+        fetch(`samplefetch/${commentId}`, {
           method: 'DELETE',
         })
           .then(() => {
