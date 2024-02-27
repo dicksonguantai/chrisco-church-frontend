@@ -4,11 +4,25 @@ import { useState } from "react";
 function Comment({comments, onCreateComment, onDeleteComment }){
     const [newComment, setNewComment] = useState('');
 
-    const handleCreateComment = () => {
-        onCreateComment({ id: comments.length + 1, content: newComment });
-        setNewComment('');
+    function handlePostComment(){
+        fetch('/postComment/', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ content: newComment }),
+        })
+          .then(response => response.json())
+          .then(data => {
+            onCreateComment(data);
+            setNewComment('');
+          })
+          .catch(error => console.error('Error posting comment:', error));
       };
     
+      const handleCreateComment = () => {
+        handlePostComment();
+      };
   
     return (
       <div className="comment-section">
