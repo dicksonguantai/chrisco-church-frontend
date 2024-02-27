@@ -16,7 +16,8 @@ function Comment({comments, onCreateComment, onDeleteComment }){
         <ul>
           {comments.map(comment => (
             <li key={comment.id}>
-              {comment.content}
+              <p>{comment.comment}    --    {comment.written_by}</p>
+              <p className="owner"></p>
               <button onClick={() => onDeleteComment(comment.id)}>Delete</button>
             </li>
           ))}
