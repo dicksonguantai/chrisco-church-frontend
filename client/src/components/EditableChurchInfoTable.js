@@ -46,8 +46,8 @@ function EditableChurchInfoTable() {
         <tbody  >
           {Object.entries(churchInfo).map(([key, value]) => (
             <tr className='my-4' key={key}>
-              <td>{key}</td>
-              <td>
+              <td >{key}</td>
+              <td className='px-4 py-2'>
                 <TextInput
                   
                   value={value}
@@ -58,7 +58,7 @@ function EditableChurchInfoTable() {
           ))}
         </tbody>
       </Table>
-      <Button className='my-6' onClick={handleSave}>Save</Button>
+      <Button className='my-6 mx-auto' onClick={handleSave}>Save</Button>
     </div>
   );
 }

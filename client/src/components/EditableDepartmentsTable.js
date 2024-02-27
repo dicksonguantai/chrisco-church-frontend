@@ -78,7 +78,7 @@ function EditableDepartmentsTable() {
   };
 
   return (
-    <div>
+    <div  className="p-6">
       <Table>
         <thead>
           <tr>
@@ -92,7 +92,7 @@ function EditableDepartmentsTable() {
         <tbody>
           {departments.map(department => (
             <tr key={department.id}>
-              <td>{department.id}</td>
+              <td className='px-4 py-2'>{department.id}</td>
               {fields.map(field => (
                 <td key={field}>
                   <TextInput
@@ -101,7 +101,7 @@ function EditableDepartmentsTable() {
                   />
                 </td>
               ))}
-              <td className='flex mx-4'>
+              <td className='flex mx-4 px-4 py-2'>
                 <Button className='mx-4' onClick={() => handleSave(department.id)}>Save</Button>
                 <Button className='mx-4' onClick={() => handleDelete(department.id)} variant="danger">Delete</Button>
               </td>
@@ -110,16 +110,17 @@ function EditableDepartmentsTable() {
         </tbody>
       </Table>
       <div className="mt-4">
-        <h2>Add New Department</h2>
+        <h2 className='font-bold'>Add New Department</h2>
         {fields.map(field => (
           <TextInput
+          className='px-4 py-1'
             key={field}
             value={newDepartment[field]}
             onChange={(e) => handleNewDepartmentInputChange(e, field)}
             placeholder={field}
           />
         ))}
-        <Button onClick={handleAddDepartment}>Add Department</Button>
+        <Button className='mx-4'onClick={handleAddDepartment}>Add Department</Button>
       </div>
     </div>
   );

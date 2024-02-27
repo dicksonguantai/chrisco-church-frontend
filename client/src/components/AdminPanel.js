@@ -16,6 +16,7 @@ import EditableUsersTable from './EditableUsersTable';
 import UserDetails from './UserDetails';
 import Header from './Header'
 import EditableBlogsTable from './EditableBlogsTable';
+import PrayerRequestsAdmin from './PrayerRequestsAdmin';
 
 
 
@@ -31,7 +32,7 @@ export default function AdminPanel() {
       <EditableUsersTable/>
       </Tabs.Item>
       <Tabs.Item title="Prayer Requests" icon={GiPrayer}>
-        
+        <PrayerRequestsAdmin/>
         </Tabs.Item>
       <Tabs.Item title="Church info" icon={FaInfoCircle}>
         <EditableChurchInfoTable/>

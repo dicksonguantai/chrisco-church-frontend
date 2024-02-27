@@ -103,7 +103,7 @@ function EditableEventsTable() {
         <tbody>
           {events.map(event => (
             <tr key={event.id}>
-              <td>
+              <td className='px-4 py-2'>
                 <TextInput
                   value={event.title}
                   onChange={(e) => handleInputChange(e, event.id, 'title')}
@@ -164,7 +164,7 @@ function EditableEventsTable() {
             </tr>
           ))}
           <tr>
-            <td>
+            <td className='px-4 py-2'>
               <TextInput
                 value={newEvent.title}
                 onChange={(e) => setNewEvent({ ...newEvent, title: e.target.value })}

@@ -86,7 +86,7 @@ function EditableUsersTable() {
       <Table>
         <thead>
           <tr>
-            <th>ID</th>
+            <th className="px-4 py-2">ID</th>
             <th>Firstname</th>
             <th>Lastname</th>
             <th>Email</th>
@@ -96,8 +96,8 @@ function EditableUsersTable() {
         <tbody>
           {users.map((user) => (
             <tr key={user.id}>
-              <td>{user.id}</td>
-              <td>
+              <td className="px-4 py-2">{user.id}</td>
+              <td className="px-4 py-2">
                 <TextInput
                   value={user.firstname}
                   onChange={(e) => handleInputChange(e, user.id, "firstname")}
