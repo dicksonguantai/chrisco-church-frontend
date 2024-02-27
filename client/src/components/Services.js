@@ -1,9 +1,25 @@
-// services.js
-
-import React from "react";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "./services.css";
 
 export default function Services() {
+  const [serviceDetails, setServiceDetails] = useState([]);
+
+  useEffect(() => {
+    fetchServiceDetails();
+  }, []);
+
+  const fetchServiceDetails = async () => {
+    try {
+      const response = await axios.get(
+        "https://chrisco-church-endpoints.onrender.com/services/all"
+      );
+      setServiceDetails(response.data);
+    } catch (error) {
+      console.error("Error fetching service details:", error);
+    }
+  };
+
   return (
     <section className="service-sec">
       <div className="text-center mx-auto">
@@ -11,18 +27,14 @@ export default function Services() {
           Service Program
         </h2>
         <div className="flex flex-wrap justify-center">
-          <div className="service-item ">
-            <h4 className="font-bold">Sunday Service</h4>
-            <p>10:00 - 12:00 IN-PERSON & ONLINE SERVICE</p>
-          </div>
-          <div className="service-item ">
-            <h4 className="font-bold">Mid week Service</h4>
-            <p>5:30 - 7:00 PM IN-PERSON</p>
-          </div>
-          <div className="service-item ">
-            <h4 className="font-bold">Overnight Service</h4>
-            <p>10:00 - 6:00 PM IN-PERSON & ONLINE SERVICE</p>
-          </div>
+          {serviceDetails.map((service) => (
+            <div className="service-item" key={service.id}>
+              <h4 className="font-bold">{service.name}</h4>
+              <p>
+                {service.start_time} - {service.end_time} {service.service_type}
+              </p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
