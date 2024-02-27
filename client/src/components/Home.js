@@ -40,7 +40,7 @@ function Home() {
       <Services />
       <SpotifyEmbeds />
       <Youtube />
-      <h1 className="text-center text-2xl">
+      <h1 className="text-center text-2xl font-bold border-b-2 border-black p-2">
         <strong >Events</strong>
       </h1>
       <div className="events">
