@@ -6,14 +6,12 @@ import SpotifyEmbeds from './Spotify';
 import Slider from './Slider1';
 import Youtube from './Youtube';
 import { Link } from 'react-router-dom';
+import Services from './Services';
 
 
 
 function Home(){
-    const imageUrl = "/Images/Homepic.png"; 
-
     const [events, setEvents] = useState([]);
-    const [serviceProgram, setServiceProgram] = useState([]);
     const [showFullText, setShowFullText] = useState(false);
 
     useEffect(() => {
@@ -31,21 +29,7 @@ function Home(){
         .catch(error => {
           console.error('Error fetching events:', error);
         });
-
-        fetch ('https://chrisco-church-endpoints.onrender.com/services/all')
-        .then(response => {
-          if (!response.ok) {
-            throw new Error('Error fetching service program');
-          }
-          return response.json();
-        })
-        .then(data => {
-          setServiceProgram(data);
-        })
-        .catch(error => {
-          console.error('Error fetching service program:', error);
-        });
-    }, [serviceProgram]);
+    }, [events]);
 
     const handleReadMoreClick = () => {
       setShowFullText(true);
@@ -56,29 +40,8 @@ function Home(){
       
       <Header />
       <Slider />
-      {/* <div className="image-container">
-        <img src={imageUrl} alt="background" className="image" />
-        <div className="overlay">
-          <h2 className="title">Welcome to Chrisco Central Church</h2>
-          <h3>Join our community of Faith</h3>
-          <p className="description">Loving God, loving others and serving the world through the words of the Lord</p>
-          <button className="read-more">Read More</button>
-        </div>
-      </div> */}
-      <div className="service-program">
-        <h2>Service Program</h2>
-        <div className="service">
-          {serviceProgram.map((service, index) => (
-            <div key={index} className="service-grid">
-              <strong><p>{service.name}</p></strong>
-              <div className='service-footer'>
-                <p>{service.start_time} - {service.end_time}</p>
-                <p>{service.service_type}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
+      
+      <Services/>
       <SpotifyEmbeds/>
       <Youtube/>
       <h1><strong>Events</strong></h1>
