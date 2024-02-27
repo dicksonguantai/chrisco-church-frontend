@@ -19,7 +19,7 @@ import EditableBlogsTable from './EditableBlogsTable';
 
 
 
-export default function Component() {
+export default function AdminPanel() {
   return (
     <>
     <Header/>
