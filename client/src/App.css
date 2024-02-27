@@ -8,7 +8,6 @@
 body {
   margin: 0;
   line-height: normal;
-  background-color: #FFE3CA;
 }
 
 h1{
@@ -69,6 +68,43 @@ h1{
     cursor: pointer;
     margin-left: 10px;
 }
+
+/* CommentSection.css */
+.comment-section {
+  margin-top: 20px;
+}
+
+.comment-section h3 {
+  margin-bottom: 10px;
+}
+
+.comment-section ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.comment-section li {
+  margin-bottom: 10px;
+}
+
+.comment-section textarea {
+  width: 100%;
+  height: 100px;
+  margin-bottom: 10px;
+}
+
+.comment-section button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.comment-section button:hover {
+  background-color: #0056b3;
+}
+
 
 .footer {
     background-color: #1b1f83;
@@ -688,6 +724,7 @@ li {
     height: 300px;
   }
 }
+
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .header {
