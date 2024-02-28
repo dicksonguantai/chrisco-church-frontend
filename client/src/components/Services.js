@@ -23,7 +23,7 @@ export default function Services() {
   return (
     <section className="service-sec">
       <div className="text-center mx-auto">
-        <h2 className="text-center text-2xl font-bold border-b border-black p-2">
+        <h2 className="text-center text-2xl font-bold border-b-2 border-black p-2">
           Service Program
         </h2>
         <div className="flex flex-wrap justify-center">

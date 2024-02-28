@@ -7,6 +7,7 @@ import Slider from "./Slider1";
 import Youtube from "./Youtube";
 import { Link } from "react-router-dom";
 import Services from "./Services";
+import Footer2 from "./Footer2";
 
 function Home() {
   const [events, setEvents] = useState([]);
@@ -64,7 +65,8 @@ function Home() {
         <button className="explore-more">Explore more</button>
       </Link>
 
-      <Footer />
+      
+      <Footer2/>
     </div>
   );
 }
