@@ -368,65 +368,80 @@ border-radius: 10px;
 }
 
 
-.faith {
-   display: flex;  
-  gap: 2rem;
-  align-items: center; 
+.faith-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 250px;
   margin-bottom: 10px;
   padding: 10px;
-  
 }
 
-.faith h1 {
-  font-weight: bold;
-  color: #163691; 
+.faith-content {
+  flex: 1;
+  padding-right: 20px; /* Adjust as needed */
+}
+
+.faith-content h1 {
   text-align: center;
-  font-size: x-large;
-   
+  color: #163691;
+  font-size: xx-large;
+  font-weight: bold;
 }
 
-
-
-.faith p {
-  font-size: 1rem; 
-  line-height: 1.5; 
+.faith-content p{
   font-size: larger;
 }
 
-.faith picture {
-  max-width: 50%; 
-  height: auto; 
-  object-fit: cover; 
+.faith-image {
+  flex: 1;
+  padding-left: 250px; /* Adjust as needed */
+
 }
-.word {
-  display: flex; 
-  gap: 2rem; 
-  align-items: center; 
+
+.faith-image img {
+  max-width: 100%;
+  height: auto;
+  width: 55%;
+ 
+}
+
+.word-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom:10px ;
   margin-top: 10px;
-  margin-bottom: 10px;
   padding: 10px;
 }
 
-.word h1 {
+.word-content {
+  flex: 1;
+  padding-left: 20px; /* Adjust as needed */
+}
+
+.word-content h1 {
+  text-align: center;
+  color: #163691;
+  font-size: xx-large;
   font-weight: bold;
-  color: #163691; 
-  text-align: center; 
-  margin-bottom: 0.5rem;
-  font-size: x-large; 
 }
 
-.word p {
-  
-  line-height: 1.5; 
+.word-content p{
   font-size: larger;
+  margin-right: 200px;
 }
 
-.bible {
-  width: 17.7%; 
-  height: auto; 
- 
-  order: -1;
+.word-image {
+  flex: 1;
+  padding-right: 20px; /* Adjust as needed */
 }
+
+.word-image img {
+  width: 40%;
+  margin-left: 250px;
+}
+
 
 .separator {
   width: 100%; 
@@ -436,63 +451,79 @@ border-radius: 10px;
 
 }
 
-
-
-.trinity {
-  display: flex; 
-  gap: 2rem;
-  align-items: center; 
+.trinity-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-top: 10px;
   margin-bottom: 10px;
-  padding: 10pxpx;
+  padding: 10px;
+  margin-left: 200px;
 }
 
-.trinity h1 {
+.trinity-content {
+  flex: 1;
+  padding-right: 20px; /* Adjust as needed */
+ 
+}
+
+.trinity-content h1{
+  text-align: center;
+  color: #163691;
+  font-size: xx-large;
   font-weight: bold;
-  color: #163691; 
-  text-align: center; 
-  margin-bottom: 0.5rem; 
-  font-size: x-large;
+
 }
 
-
-.trinity p {
-  font-size:larger;
-  line-height: 1.5; 
+.trinity-content p{
+  font-size: larger;
 }
 
-.trinity picture {
-  width: 1%;
-  height: auto; 
+.trinity-image {
+  flex: 1;
+  padding-left: 215px; /* Adjust as needed */
 }
 
-.baptism {
-  display: flex; 
-  gap: 2rem; 
-  align-items: center; 
+.baptism-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom:10px ;
   margin-top: 10px;
-  flex-direction: row-reverse;
   padding: 10px;
 }
 
-.baptism h1 {
+.baptism-content {
+  flex: 1;
+  padding-left: 20px; /* Adjust as needed */
+}
+
+.baptism-content h1 {
+  text-align: center;
+  color: #163691;
+  font-size: xx-large;
   font-weight: bold;
-  color: #163691; 
-  text-align: center; 
-  margin-bottom: 0.5rem; 
-  font-size: x-large;
 }
 
-.baptism p {
-  font-size: larger; 
-  line-height: 1.5; 
+.baptism-content p{
+  font-size: larger;
+  margin-right: 200px;
 }
 
-.baptism picture {
-  width: 500px; 
-  height: 0%; 
-   
+.baptism-image {
+  flex: 1;
+  padding-right: 20px; /* Adjust as needed */
 }
+
+.baptism-image img {
+  margin-left: 250px;
+}
+
+.baptism-picture {
+  max-width: 100%;
+  height: auto;
+}
+
 
 .why-chrisco {
   display: flex;
@@ -755,6 +786,6 @@ input[type="submit"] {
   padding: 1.5rem;
   border: 1px solid #ccc;
   border-radius: 5px;
-  
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
