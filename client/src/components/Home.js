@@ -60,10 +60,11 @@ function Home() {
             </button>
           </div>
         ))}
+        
+        <button className=" mx-auto"><Link to="/events">Explore more</Link></button>
+      
       </div>
-      <Link to="/events">
-        <button className="explore-more">Explore more</button>
-      </Link>
+      
 
       
       <Footer2/>
