@@ -374,6 +374,7 @@ border-radius: 10px;
   align-items: center; 
   margin-bottom: 10px;
   padding: 10px;
+  
 }
 
 .faith h1 {
@@ -383,6 +384,7 @@ border-radius: 10px;
   font-size: x-large;
    
 }
+
 
 
 .faith p {
@@ -571,3 +573,188 @@ li {
   margin-right: 150px;
   margin-left: 150px;
 }
+
+.contact-us-container {
+  display: flex;  
+  gap: 2rem;
+  align-items: center; 
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.contact-image {
+  width: 25%;
+  margin-bottom: 3rem;
+  padding-left: 20px;
+  
+}
+
+.contact-content {
+  width: 50%;
+  text-align: center;
+}
+
+.contact-content h1 {
+  color: #163691;
+}
+
+.contact-content {
+   margin-left: 150px;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.contact-methods {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 2rem;
+}
+
+.contact-method {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 30%;
+  padding: 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.contact-method i {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.contact-method h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.contact-method p {
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .contact-us-container {
+    padding: 3rem 1rem;
+  }
+
+  .contact-image {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+
+  .contact-content {
+    width: 100%;
+  }
+
+  .contact-method {
+    width: 45%;
+  }
+}
+
+
+
+form {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+  align-items: center;
+  margin-left: 500px;
+  margin-right: 500px;
+  /* background-color: rgb(180, 162, 162); */
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: block;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+textarea {
+  height: 150px;
+}
+
+input[type="submit"] {
+  border: 2px solid #163691;
+ background-color: white;
+ color: #163691;
+  padding: 5px 10px; 
+  border-radius: 5px;
+  margin-top: 10px;
+  margin-left: 300px;
+  margin-right: 300px;
+}
+
+/* input[type="submit"]:hover {
+  background-color: red;
+} */
+
+.email h2{
+  text-align: center;
+  font-size: xx-large;
+  
+  color: #163691;
+}
+
+.mission,
+.vision {
+  margin-bottom: 2rem;
+}
+
+.mission h2,
+.vision h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+}
+
+.mission p,
+.vision p {
+  font-size: larger; 
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+.long {
+  display: flex;
+  margin-top: 30px;
+  margin-bottom: 30px;
+  padding: 10px;
+  
+}
+
+.vision,
+.mission {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 50%;
+  padding: 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  
+}
+
