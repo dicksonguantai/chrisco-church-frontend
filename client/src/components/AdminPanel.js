@@ -5,6 +5,8 @@ import { FaPlaceOfWorship } from "react-icons/fa";
 import { GiPartyPopper } from "react-icons/gi";
 import { FcDepartment } from "react-icons/fc";
 import { FaBlog } from "react-icons/fa";
+import { GiPrayer } from "react-icons/gi";
+
 
 import EditableEventsTable from './EditableEventsTable';
 import { FaInfoCircle } from "react-icons/fa";
@@ -13,10 +15,12 @@ import EditableChurchInfoTable from './EditableChurchInfoTable';
 import EditableUsersTable from './EditableUsersTable';
 import UserDetails from './UserDetails';
 import Header from './Header'
+import EditableBlogsTable from './EditableBlogsTable';
+import PrayerRequestsAdmin from './PrayerRequestsAdmin';
 
 
 
-export default function Component() {
+export default function AdminPanel() {
   return (
     <>
     <Header/>
@@ -27,6 +31,9 @@ export default function Component() {
       <Tabs.Item active title="Users" icon={HiUserCircle}>
       <EditableUsersTable/>
       </Tabs.Item>
+      <Tabs.Item title="Prayer Requests" icon={GiPrayer}>
+        <PrayerRequestsAdmin/>
+        </Tabs.Item>
       <Tabs.Item title="Church info" icon={FaInfoCircle}>
         <EditableChurchInfoTable/>
         </Tabs.Item>
@@ -37,6 +44,7 @@ export default function Component() {
         <EditableEventsTable/>
       </Tabs.Item>
       <Tabs.Item title="Blogs" icon={FaBlog}>
+        <EditableBlogsTable/>
       </Tabs.Item>
       <Tabs.Item title="Departments" icon={FcDepartment}>
         <EditableDepartmentsTable/>
