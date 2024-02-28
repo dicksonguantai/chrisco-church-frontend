@@ -41,7 +41,7 @@ function AboutUs() {
     <div className="long">
       <div className="mission">
         <h2>Our Mission</h2>
-        <p>To equip belivers through prayer, teaching God's word, discipleship, evangelism, Christian living, tent-making so that they can be united and attain the full knowledge of Christ in spiritual maturity</p>
+        <p>To equip belivers through prayer, teaching God's word, discipleship, evangelism, Christian living, tent-making so that they can be united and attain the full knowledge of Christ in spiritual maturity.</p>
       </div>
       
       <div className="vision">
