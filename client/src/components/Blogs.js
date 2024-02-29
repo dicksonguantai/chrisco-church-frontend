@@ -36,6 +36,7 @@ function Blogs() {
         {blogs.map(blog => (
           <BlogCard
             key={blog.id}
+            id ={blog.id}
             title={blog.title}
             description={blog.description}
             onClick={handleReadMore}
