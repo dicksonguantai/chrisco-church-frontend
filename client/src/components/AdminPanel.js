@@ -31,6 +31,9 @@ export default function AdminPanel() {
       <Tabs.Item active title="Users" icon={HiUserCircle}>
       <EditableUsersTable/>
       </Tabs.Item>
+      <Tabs.Item title="My Prayer Requests" icon={GiPrayer}>
+        <PrayerRequestsAdmin/>
+        </Tabs.Item>
       <Tabs.Item title="Prayer Requests" icon={GiPrayer}>
         <PrayerRequestsAdmin/>
         </Tabs.Item>

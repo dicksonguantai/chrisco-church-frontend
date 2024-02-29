@@ -44,7 +44,7 @@ function Home() {
       <h1 className="text-center text-2xl font-bold border-b-2 border-black p-2">
         <strong >Events</strong>
       </h1>
-      <div className="events">
+      <div className="events md:block">
         {events.map((event) => (
           <div key={event.id} className="event-grid">
             {/* <img src={event.event_img} alt={event.title}/> */}
