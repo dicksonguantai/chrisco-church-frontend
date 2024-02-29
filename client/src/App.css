@@ -714,7 +714,7 @@ li {
 
 
 .container-banner-container-rounded{
-  background-image: url("/home/davy/Development/code/Capstone-Project/chrisco-church-frontend/client/public/Images/20230818_142741.jpg");
+  background-image: url("https://lh3.googleusercontent.com/pw/AP1GczPzXEAC6Co3CfuJFehbeclf45Uchscr1mCJdcYSvNVtwdf9hvtXvd_GjeLSvb-6XczTqs7eiqYbg1oHTnQYRgIlyxLcPBRbm1D5HrXGwQVq0Kbvhg=w2400");
   height: 500px;
   background-size: cover;
   background-attachment: fixed;
@@ -723,7 +723,7 @@ li {
 }
 
 .container-banner-container-round{
-  background-image: url("/home/davy/Development/code/Capstone-Project/chrisco-church-frontend/client/public/Images/20230827_124235.jpg");
+  background-image: url("https://lh3.googleusercontent.com/pw/AP1GczPS3P5YVgxqsxkKm0IfxjJ-oKXHhHtPd5G9Rih4XBzwtUT-Nu3WMdzIJmu3t0iuNwQrs4zyOarrsaSL3plZAQpsjgCmYo77a-TONi4WKineQGK2iA=w2400");
   height: 500px;
   background-size: cover;
   background-attachment: fixed;
@@ -958,7 +958,7 @@ li {
   .contact-us-container {
     padding: 3rem 1rem;
   }
-
+}
   .contact-image {
     width: 100%;
     margin-bottom: 2rem;
