@@ -4,6 +4,13 @@ import { Table, Button } from "flowbite-react";
 import { TextInput } from "flowbite-react";
 
 function EditableUsersTable() {
+
+  const token = localStorage.getItem('accessToken');
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
   const [users, setUsers] = useState([]);
   const [newUser, setNewUser] = useState({});
 
@@ -14,7 +21,7 @@ function EditableUsersTable() {
   const fetchData = async () => {
     try {
       const response = await axios.get(
-        "https://chrisco-church-endpoints.onrender.com/users/all"
+        "https://chrisco-church-endpoints.onrender.com/users/all",config
       );
       setUsers(response.data);
     } catch (error) {
@@ -62,8 +69,8 @@ function EditableUsersTable() {
   const handleAddNewUser = async () => {
     try {
       const response = await axios.post(
-        "https://chrisco-church-endpoints.onrender.com/users",
-        newUser
+        "https://chrisco-church-endpoints.onrender.com/users/new",
+        newUser ,config
       );
       setUsers((prevUsers) => [...prevUsers, response.data]);
       setNewUser({});

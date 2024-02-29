@@ -37,6 +37,8 @@ const LogIn = ({ onClose }) => {
       localStorage.setItem('lastName', data.user_details.lastname);
       localStorage.setItem('email', data.user_details.email);
       localStorage.setItem('role', data.user_details.role);
+      localStorage.setItem('id',data.user_details.id)
+
 
       console.log("i am redirecting")
       navigate("/panel" );
