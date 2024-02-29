@@ -4,6 +4,12 @@ import { Table, Button } from 'flowbite-react';
 import { TextInput } from 'flowbite-react';
 
 function EditableEventsTable() {
+  const token = localStorage.getItem('accessToken');
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
   const [events, setEvents] = useState([]);
   const [newEvent, setNewEvent] = useState({
     title: '',
@@ -45,7 +51,7 @@ function EditableEventsTable() {
   const handleSave = async (id) => {
     try {
       const eventToUpdate = events.find(event => event.id === id);
-      await axios.patch(`https://chrisco-church-endpoints.onrender.com/events/${id}`, eventToUpdate);
+      await axios.patch(`https://chrisco-church-endpoints.onrender.com/events/update/${id}`, eventToUpdate,config);
       console.log(`Event with ID ${id} updated successfully`);
     } catch (error) {
       console.error('Error updating event:', error);
@@ -54,7 +60,7 @@ function EditableEventsTable() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`https://chrisco-church-endpoints.onrender.com/events/${id}`);
+      await axios.delete(`https://chrisco-church-endpoints.onrender.com/events/delete/${id}`,config);
       setEvents(prevEvents => prevEvents.filter(event => event.id !== id));
       console.log(`Event with ID ${id} deleted successfully`);
     } catch (error) {
@@ -64,7 +70,7 @@ function EditableEventsTable() {
 
   const handleAddEvent = async () => {
     try {
-      await axios.post('https://chrisco-church-endpoints.onrender.com/events', newEvent);
+      await axios.post('https://chrisco-church-endpoints.onrender.com/events/new', newEvent,config);
       setNewEvent({
         title: '',
         description: '',
