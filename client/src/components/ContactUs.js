@@ -43,7 +43,6 @@ const ContactUs = () => {
             <ContactMethod icon={<FaEnvelope />} title="Email" content="chrisco.central@yahoo.com" />
             <ContactMethod icon={<FaMapMarkerAlt />} title="Address" content="Woodley, Kenya 00100" />
           </div>
-          {/* Add your social media icons here */}
         </div>
         
       </div>
