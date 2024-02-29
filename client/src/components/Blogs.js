@@ -29,9 +29,9 @@ function Blogs() {
   return (
     <>
       <Header />
-      <h2 className="text-center text-2xl font-bold border-b-2 border-black p-4">
+      {/* <h2 className="text-center text-2xl font-bold border-b-2 border-black p-4">
           Blogs
-        </h2>
+        </h2> */}
         <div className='block mx-auto md:flex blogs-card p-4'>
         {blogs.map(blog => (
           <BlogCard
