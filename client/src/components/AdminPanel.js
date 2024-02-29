@@ -18,7 +18,7 @@ import PrayerRequestsAdmin from './PrayerRequestsAdmin';
 
 export default function AdminPanel() {
   const role = localStorage.getItem('role') || '';
-
+  
   const renderAdminContent = () => {
     switch (role) {
       case 'superadmin':

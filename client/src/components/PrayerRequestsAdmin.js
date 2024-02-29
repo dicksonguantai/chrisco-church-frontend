@@ -5,6 +5,13 @@ import { BsCheckCircle, BsCircle } from 'react-icons/bs';
 
 const PrayerRequestsTable = () => {
   const [requests, setRequests] = useState([]);
+   const token = localStorage.getItem('accessToken')
+
+   const config = {
+    headers:{
+      Authorization: `Bearer ${token}`
+    },
+   }
 
   useEffect(() => {
     fetchData();
@@ -12,7 +19,7 @@ const PrayerRequestsTable = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get('https://chrisco-church-endpoints.onrender.com/requests/all');
+      const response = await axios.get('https://chrisco-church-endpoints.onrender.com/requests/all', config);
       setRequests(response.data);
     } catch (error) {
       console.error('Error fetching data:', error);
