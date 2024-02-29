@@ -609,9 +609,11 @@ li {
 .contact-us-container {
   display: flex;  
   gap: 2rem;
-  align-items: center; 
+   
   margin-bottom: 10px;
   padding: 10px;
+  margin-left:50px;
+
 }
 
 .contact-image {
@@ -622,16 +624,17 @@ li {
 }
 
 .contact-content {
-  width: 50%;
+  width: 100%;
   text-align: center;
 }
 
 .contact-content h1 {
   color: #163691;
+  text-align: center;
 }
 
-.contact-content {
-   margin-left: 150px;
+.contact-content p{
+  font-size: x-large;
 }
 
 .title {
@@ -669,7 +672,7 @@ li {
 }
 
 .contact-method p {
-  font-size: 1rem;
+  font-size: larger;
 }
 
 @media screen and (max-width: 768px) {
@@ -793,4 +796,5 @@ input[type="submit"] {
 .map{
   margin-top: 10px;
   width: 100%;
+  padding: 30px;
 }

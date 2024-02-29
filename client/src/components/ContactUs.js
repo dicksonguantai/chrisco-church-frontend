@@ -32,7 +32,6 @@ const ContactUs = () => {
       <Header />
       <div className="contact-us-container">
         
-        <img src="contact.png" alt="contact section" className="contact-image" />
         <div className="contact-content">
           <h1 className="title">WE WANT TO HEAR FROM YOU</h1>
           <p>
