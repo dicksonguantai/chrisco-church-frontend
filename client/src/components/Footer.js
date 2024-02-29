@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import { Button, Footer, Label, TextInput } from "flowbite-react"; // Import Footer from flowbite-react
 import {
   BsDribbble,
@@ -9,6 +9,43 @@ import {
 } from "react-icons/bs";
 
 function Footer2() {
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [showMessage, setShowMessage] = useState(false);
+
+  const handleSubscribe = () => {
+    fetch("https://chrisco-church-endpoints.onrender.com/subscriptions/create", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ email })
+    })
+    .then(response => {
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      return response.json();
+    })
+    .then(data => {
+      console.log(data.message);
+      showMessageWithTimeout(data.message);
+    })
+    .catch(error => {
+      console.error("There was a problem with your fetch operation:", error);
+      showMessageWithTimeout("Failed to subscribe");
+    });
+  };
+
+  const showMessageWithTimeout = (message) => {
+    setMessage(message);
+    setShowMessage(true);
+    setTimeout(() => {
+      setShowMessage(false);
+    }, 2000); 
+  };
+
+
   return (
     <div>
       <Footer className="w-full bg-blue-900 text-white p-4">
@@ -56,6 +93,8 @@ function Footer2() {
                   id="email"
                   type="email"
                   placeholder="name@gmail.com"
+                  value={email}
+                  onChange={e => setEmail(e.target.value)}
                   required
                   
                   helperText={
@@ -71,7 +110,7 @@ function Footer2() {
                     </>
                   }
                 />
-                <Button className="bg-blue-500 hover:text-red-500 hover:bg-blue-600">
+                <Button className="bg-blue-500 hover:text-red-500 hover:bg-blue-600" onClick={handleSubscribe}>
                   Submit
                 </Button>
               </div>
