@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { useState, useEffect } from 'react';
 import Header from './Header';
@@ -8,8 +9,9 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Youtube from './Youtube';
 import { Link } from 'react-router-dom';
+import Services from "./Services";
 
-
+  
 
 function Home(){
     const imageUrl2 = "/Images/Homepic.png"; 
@@ -21,19 +23,20 @@ function Home(){
 
     useEffect(() => {
       
-      fetch('https://chrisco-church-endpoints.onrender.com/events/all')
-        .then(response => {
-          if (!response.ok) {
-            throw new Error('Error fetching events');
-          }
-          return response.json();
-        })
-        .then(data => {
-          setEvents(data);
-        })
-        .catch(error => {
-          console.error('Error fetching events:', error);
-        });
+       fetch("https://chrisco-church-endpoints.onrender.com/events/all")
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Error fetching events");
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setEvents(data);
+      })
+      .catch((error) => {
+        console.error("Error fetching events:", error);
+      });
+  }, [events]);
 
         fetch ('https://chrisco-church-endpoints.onrender.com/services/all')
         .then(response => {
@@ -65,9 +68,9 @@ function Home(){
       verticalSwiping: false,
     };
 
+
   return (
     <div>
-      
       <Header />
       <Slider {...settings}>
         <div className="image-container">
@@ -116,15 +119,16 @@ function Home(){
               <button className="read-more" onClick={handleReadMoreClick}>Read More</button>
             </div>
           ))}
+
+
       </div>
-        <Link to="/events">
+      <Link to="/events">
         <button className="explore-more">Explore more</button>
-        </Link>
-      
+       </Link>
+
       
       <Footer/>
     </div>
-    
   );
 }
 

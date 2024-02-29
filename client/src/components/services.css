@@ -1,0 +1,11 @@
+.service-sec {
+    padding: 15px 0px 0px 0px;
+}
+@media (min-width: 768px) {
+    .service-item {
+      width: 33.3333%; /* Each service item takes up one-third of the container width */
+      box-sizing: border-box; /* Ensure padding is included in the width */
+    }
+    
+  }
+  

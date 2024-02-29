@@ -34,9 +34,14 @@ const LogIn = ({ onClose }) => {
 
       localStorage.setItem('accessToken', data.tokens.access);
       localStorage.setItem('firstName', data.user_details.username);
+      localStorage.setItem('lastName', data.user_details.lastname);
+      localStorage.setItem('email', data.user_details.email);
+      localStorage.setItem('role', data.user_details.role);
+      localStorage.setItem('id',data.user_details.id)
+
 
       console.log("i am redirecting")
-      navigate("/dashboard" );
+      navigate("/panel" );
     } catch (error) {
       setError(error.message);
     }

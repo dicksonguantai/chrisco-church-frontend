@@ -3,8 +3,12 @@ import { Link, useNavigate } from 'react-router-dom';
 
 const Dashboard = () => {
   const navigate = useNavigate();
-  const firstName = localStorage.getItem('firstName') || '';
-  console.log("First Name:", firstName);
+  const FirstName = localStorage.getItem('firstName') || '';
+  const LastName = localStorage.getItem('lastName') || '';
+  const Email = localStorage.getItem('email') || '';
+  const Role = localStorage.getItem('role') || '';
+  const Token = localStorage.getItem('accessToken') || '';
+  console.log("First Name:", FirstName);
 
   const handleLogout = () => {
     localStorage.clear();
@@ -13,7 +17,11 @@ const Dashboard = () => {
 
   return (
     <div>
-      <h1>Welcome, {firstName}</h1>
+      <h1>Welcome, {FirstName}</h1>
+      <h1> Surname, {LastName}</h1>
+      <h1>Email, {Email}</h1>
+      <h1>Role, {Role}</h1>
+      <h1>Token, {Token}</h1>
       <button onClick={handleLogout}>Logout</button>
     </div>
   );

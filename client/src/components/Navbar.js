@@ -22,7 +22,7 @@ const Navbar = () => {
         className="nav-link-krgcjpg"
         loading="eager"
         alt=""
-        src="./logo.svg"
+        src="/logo.svg"
       />
       <div className="menu-icon" onClick={toggleMenu}>
               <span></span>
@@ -65,7 +65,7 @@ const Navbar = () => {
           </div>
           <div className="nav-list3">
             
-          <Link to= "/blogs">Services</Link>
+          <Link to= "/blogs">Blogs</Link>
           </div>
           <div className="nav-item-link3">
             <div className="nav-list4">

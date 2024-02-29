@@ -85,7 +85,7 @@ function EditableTable() {
         <tbody>
           {data.map((row, rowIndex) => (
             <tr key={rowIndex}>
-              <td>
+              <td className='px-4 py-2'>
                 <TextInput
                   value={row.name}
                   onChange={(e) => handleInputChange(e, rowIndex, 'name')}
@@ -109,14 +109,14 @@ function EditableTable() {
                   onChange={(e) => handleInputChange(e, rowIndex, 'end_time')}
                 />
               </td>
-              <td className='flex'>
+              <td className='flex '>
                 <Button className='mx-4' onClick={() => handleSave(row.id)}>Save</Button>
                 <Button className='mx-4'onClick={() => handleDelete(row.id)} variant="danger">Delete</Button>
               </td>
             </tr>
           ))}
           <tr>
-            <td>
+            <td className='px-4 py-2'>
               <TextInput
                 value={newItem.name}
                 onChange={(e) => setNewItem({ ...newItem, name: e.target.value })}

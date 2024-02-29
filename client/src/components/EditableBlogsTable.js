@@ -78,7 +78,7 @@ function EditableBlogsTable() {
   };
 
   return (
-    <div>
+    <div  className="p-6">
       <Table className="w-full">
         <thead>
           <tr>
@@ -120,7 +120,7 @@ function EditableBlogsTable() {
         </tbody>
       </Table>
       <div className="mt-4">
-        <h2>Add New Blog</h2>
+        <h2 className='font-bold py-2'>Add New Blog</h2>
         <div className="flex">
           {fields.map(field => (
             <TextInput
