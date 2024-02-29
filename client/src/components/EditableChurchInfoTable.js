@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Table } from 'flowbite-react';
-import { TextInput } from 'flowbite-react';
+import { TextInput,Button } from 'flowbite-react';
 
 function EditableChurchInfoTable() {
   const [churchInfo, setChurchInfo] = useState(null);
@@ -43,12 +43,13 @@ function EditableChurchInfoTable() {
   return (
 <div className="p-6">  
     <Table>
-        <tbody>
+        <tbody  >
           {Object.entries(churchInfo).map(([key, value]) => (
-            <tr key={key}>
-              <td>{key}</td>
-              <td>
+            <tr className='my-4' key={key}>
+              <td >{key}</td>
+              <td className='px-4 py-2'>
                 <TextInput
+                  
                   value={value}
                   onChange={(e) => handleInputChange(e, key)}
                 />
@@ -57,7 +58,7 @@ function EditableChurchInfoTable() {
           ))}
         </tbody>
       </Table>
-      <button onClick={handleSave}>Save</button>
+      <Button className='my-6 mx-auto' onClick={handleSave}>Save</Button>
     </div>
   );
 }

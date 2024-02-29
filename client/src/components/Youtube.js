@@ -1,10 +1,34 @@
-import React from 'react';
+import React,{useEffect,useState} from 'react';
 import './youtube.css'
 import { BsChevronDoubleRight } from "react-icons/bs";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom'
+import axios from 'axios';;
 
 const Youtube = () => {
-const navigate = useNavigate();
+  const navigate = useNavigate();
+
+  const [videoId1, setVideoId1] = useState('');
+  const [videoId2, setVideoId2] = useState('');
+  const [videoId3, setVideoId3] = useState('');
+
+  useEffect(() => {
+    fetchVideoId(1);
+    fetchVideoId(2);
+    fetchVideoId(3);
+  }, []);
+
+  const fetchVideoId = async (number) => {
+    try {
+      const response = await axios.get(`https://chrisco-church-endpoints.onrender.com/youtube/latest-videos`);
+      if (response.data) {
+        setVideoId1(response.data[0].videoId);
+        setVideoId2(response.data[1].videoId);
+        setVideoId3(response.data[2].videoId);
+      }
+    } catch (error) {
+      console.error(`Error fetching YouTube video ID ${number}:`, error);
+    }
+  };
     const handleViewMoreClick = () => {
     navigate('/services')
       };
@@ -28,7 +52,7 @@ const navigate = useNavigate();
             <div class="col-md-4">
                 <div class="shadow ">
                    
-                    <iframe class="rounded" width="100%" height="315" src="https://www.youtube.com/embed/wGqCcv6eH2c" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+                    <iframe class="rounded" width="100%" height="315" src= {`https://www.youtube.com/embed/${videoId1}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
                     
                 </div>
             </div>
@@ -36,7 +60,7 @@ const navigate = useNavigate();
             <div class="col-md-4">
                 <div class="shadow ">
                    
-                    <iframe class="rounded" width="100%" height="315" src="https://www.youtube.com/embed/qHaZasrf6qA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+                    <iframe class="rounded" width="100%" height="315" src={`https://www.youtube.com/embed/${videoId2}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
                     
                 </div>
             </div>
@@ -44,7 +68,7 @@ const navigate = useNavigate();
             <div class="col-md-4">
                 <div class="shadow ">
                    
-                    <iframe class="rounded" width="100%" height="315" src="https://www.youtube.com/embed/5O5W41rMz6w" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
+                    <iframe class="rounded" width="100%" height="315" src={`https://www.youtube.com/embed/${videoId3}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen=""></iframe>
                     
                 </div>
             </div>

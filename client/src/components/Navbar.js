@@ -1,17 +1,20 @@
 import "./Navbar.css";
 import {Link} from 'react-router-dom'
 import { useState } from "react";
+import Modal from './Modal';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  const handleLogin = () => {
-    window.location.href = "/login";
+  const toggleModal = () => {
+    setIsModalOpen(!isModalOpen);
   };
+
 
   return (
     <header className="nav-link-krgcjpg-parent">
@@ -19,7 +22,7 @@ const Navbar = () => {
         className="nav-link-krgcjpg"
         loading="eager"
         alt=""
-        src="./logo.svg"
+        src="/logo.svg"
       />
       <div className="menu-icon" onClick={toggleMenu}>
               <span></span>
@@ -62,7 +65,7 @@ const Navbar = () => {
           </div>
           <div className="nav-list3">
             
-          <Link to= "/blogs">Services</Link>
+          <Link to= "/blogs">Blogs</Link>
           </div>
           <div className="nav-item-link3">
             <div className="nav-list4">
@@ -72,13 +75,12 @@ const Navbar = () => {
           <button className="give login-text nav-container">
             <b className="login">Give</b>
           </button>
-          <Link to="/login">
-          <button className="nav-container">
-            <b className="login" onClick={handleLogin}>Login</b>
+          <button className="nav-container" onClick={toggleModal}>
+            <b className="login" >Login</b>
           </button>
-          </Link>
         </div>
       </div>
+      <Modal isOpen={isModalOpen} onClose={toggleModal} />
     </header>
   )}
 

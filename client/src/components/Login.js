@@ -2,7 +2,7 @@ import React , {useState} from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import './login.css';
 
-const LogIn = () => {
+const LogIn = ({ onClose }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
@@ -34,9 +34,14 @@ const LogIn = () => {
 
       localStorage.setItem('accessToken', data.tokens.access);
       localStorage.setItem('firstName', data.user_details.username);
+      localStorage.setItem('lastName', data.user_details.lastname);
+      localStorage.setItem('email', data.user_details.email);
+      localStorage.setItem('role', data.user_details.role);
+      localStorage.setItem('id',data.user_details.id)
+
 
       console.log("i am redirecting")
-      navigate("/dashboard" );
+      navigate("/panel" );
     } catch (error) {
       setError(error.message);
     }
@@ -46,7 +51,7 @@ const LogIn = () => {
     <div className="login-container">
       <img src="./logo.svg" alt="Logo" className="login-logo" />
 
-      <h6 className="signup-header">Don't have an account yet? <Link to="/signup" className="signup-link">Sign up here</Link></h6>
+      <h6 className="signup-header">Don't have an account yet? <a  className="signup-link">switch to Sign up below</a></h6>
       <form>
         <div>
           <input 
@@ -67,9 +72,6 @@ const LogIn = () => {
             onChange={(e) => setPassword(e.target.value)} 
             required  
           />
-          <div className="password-help">
-            <a href="/" onClick={handleForgotPassword}>Forgot your password?</a>
-          </div>
         </div>
         <button className="login-button" type="submit" onClick={handleLogin}>Log In</button>
       </form>

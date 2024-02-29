@@ -8,9 +8,13 @@
 body {
   margin: 0;
   line-height: normal;
+  font-family: 'Mukta Malar';
   
 }
-
+footer{
+  background-color: #163691;
+  color:white
+}
 
 
 
@@ -117,7 +121,7 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    /* background-color: rgba(0, 0, 0, 0.5); */
     color: white;
     padding: 20px;
     opacity: 1;
