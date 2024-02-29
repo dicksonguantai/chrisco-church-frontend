@@ -39,7 +39,7 @@ const LogIn = ({ onClose }) => {
       localStorage.setItem('role', data.user_details.role);
 
       console.log("i am redirecting")
-      navigate("/dashboard" );
+      navigate("/panel" );
     } catch (error) {
       setError(error.message);
     }
