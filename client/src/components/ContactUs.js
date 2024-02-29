@@ -36,6 +36,7 @@ const ContactUs = () => {
   };
 
   return (
+    
     <div>
       <Header />
       <div className="contact-us-container">
@@ -52,6 +53,7 @@ const ContactUs = () => {
           </div>
         </div>
       </div>
+
       <div className="email">
         <h2>Contact Us</h2>
         <form ref={form} onSubmit={sendInquiry}>
