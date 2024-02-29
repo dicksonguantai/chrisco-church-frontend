@@ -28,7 +28,7 @@ const PrayerRequestsTable = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`https://chrisco-church-endpoints.onrender.com/requests/${id}`);
+      await axios.delete(`https://chrisco-church-endpoints.onrender.com/requests/delete/${id}`,config);
       setRequests(requests.filter(request => request.id !== id));
       console.log(`Request with ID ${id} deleted successfully`);
     } catch (error) {
