@@ -57,7 +57,7 @@ const ContactUs = () => {
         <textarea name="message" />
         <input type="submit" value="Send Message --->"  className=" button "/>
       </form>
-      <img src="map.png" alt="maping"  className="map"   />
+      <img src="/map.png" alt="maping"  className="map"   />
       </div>
       <Footer />
     </div>
