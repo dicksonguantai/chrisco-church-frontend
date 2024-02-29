@@ -56,7 +56,7 @@ const ContactUs = () => {
 
       <div className="email">
         <h2>Contact Us</h2>
-        <form ref={form} onSubmit={sendInquiry}>
+        <form className="contact-form"  ref={form} onSubmit={sendInquiry}>
           <label>Name</label>
           <input type="text" name="name" />
           <label>Email</label>
