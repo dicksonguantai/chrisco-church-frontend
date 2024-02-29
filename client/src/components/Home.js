@@ -7,7 +7,6 @@ import Slider from "./Slider1";
 import Youtube from "./Youtube";
 import { Link } from "react-router-dom";
 import Services from "./Services";
-import Footer2 from "./Footer2";
 
 function Home() {
   const [events, setEvents] = useState([]);
@@ -67,7 +66,7 @@ function Home() {
       
 
       
-      <Footer2/>
+      <Footer/>
     </div>
   );
 }
