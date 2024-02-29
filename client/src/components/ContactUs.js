@@ -1,37 +1,44 @@
 import React, { useRef } from 'react';
 import Header from './Header';
 import Footer from './Footer';
-import { FaPhone, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
-import emailjs from 'emailjs-com';
-
-
+import { FaPhone, FaMapMarkerAlt,  FaEnvelope} from 'react-icons/fa';
 
 const ContactUs = () => {
   const form = useRef();
 
-  const sendEmail = (e) => {
+  const sendInquiry = async (e) => {
     e.preventDefault();
+    const formData = new FormData(form.current);
+    const payload = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      inquiry: formData.get('inquiry'),
+    };
 
-    emailjs
-      .sendForm('service_al1g9fr', 'template_la8l1ll', form.current, {
-        publicKey: 'A0BAvwxVqLJpq9joZ',
-      })
-      .then(
-        () => {
-          console.log('SUCCESS!');
+    try {
+      const response = await fetch('https://chrisco-church-endpoints.onrender.com/inquiries/create', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
         },
-        (error) => {
-          console.log('FAILED...', error.text);
-        },
-      );
-      e.target.reset()
+        body: JSON.stringify(payload),
+      });
+      if (response.ok) {
+        console.log('Inquiry sent successfully!');
+      } else {
+        console.error('Failed to send inquiry.');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
+
+    form.current.reset();
   };
 
   return (
     <div>
       <Header />
       <div className="contact-us-container">
-        
         <div className="contact-content">
           <h1 className="title">WE WANT TO HEAR FROM YOU</h1>
           <p>
@@ -44,20 +51,19 @@ const ContactUs = () => {
             <ContactMethod icon={<FaMapMarkerAlt />} title="Address" content="Woodley, Kenya 00100" />
           </div>
         </div>
-        
       </div>
-         <div className="email">
-          <h2>Contact Us</h2>
-      <form ref={form} onSubmit={sendEmail}>
-        <label>Name</label>
-        <input type="text" name="from_name" />
-        <label>Email</label>
-        <input type="email" name="from_email" />
-        <label>Message</label>
-        <textarea name="message" />
-        <input type="submit" value="Send Message --->"  className=" button "/>
-      </form>
-      <img src="map.png" alt="maping"  className="map"   />
+      <div className="email">
+        <h2>Contact Us</h2>
+        <form ref={form} onSubmit={sendInquiry}>
+          <label>Name</label>
+          <input type="text" name="name" />
+          <label>Email</label>
+          <input type="email" name="email" />
+          <label>Message</label>
+          <textarea name="inquiry" />
+          <input type="submit" value="Send Message --->" className="button" />
+        </form>
+        <img src="map.png" alt="maping" className="map" />
       </div>
       <Footer />
     </div>

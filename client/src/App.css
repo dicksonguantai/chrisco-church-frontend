@@ -801,4 +801,49 @@ input[type="submit"] {
   margin-top: 10px;
   width: 100%;
   padding: 30px;
+  max-width: 100%;
+  height: auto;
 }
+
+/* CSS for smaller screens */
+/* CSS for smaller screens */
+@media (max-width: 700px) {
+  .contact-us-container {
+    flex-direction: column;
+  }
+
+  .contact-content,
+  .email {
+    margin-right: 40px;
+  }
+
+  /* Additional adjustments for smaller screens */
+  .title {
+    font-size: large; /* Adjust font size of title */
+  }
+
+  .contact-methods {
+    flex-direction: column; /* Arrange contact methods vertically */
+    font-size: large;
+  }
+ 
+  .contact-method {
+    margin-bottom: 20px; /* Add spacing between contact methods */
+   
+  }
+
+  /* Adjust font size of contact method content */
+  .contact-method h3,
+  .contact-method p {
+    font-size: 1.2rem;
+  }
+
+  /* Adjust font size of form labels and inputs */
+  .email label,
+  .email input,
+  .email textarea,
+  .email input[type="submit"] {
+    font-size: 1.2rem;
+  }
+}
+
