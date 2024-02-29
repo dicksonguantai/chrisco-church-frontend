@@ -3,7 +3,7 @@ import './blog.css';
 import Header from './Header'
 import Footer from './Footer';
 import { useState, useEffect } from 'react';
-import Comment from './Comment';
+// import Comment from './Comment';
 
 
 const Blog = () => {
@@ -17,29 +17,29 @@ const Blog = () => {
         "content": "Fusce at arcu in velit gravida fringilla. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas."
       }
 
-      const [showComments, setShowComments] = useState(false);
-      const [comments, setComments] = useState([]);
+      // const [showComments, setShowComments] = useState(false);
+      // const [comments, setComments] = useState([]);
     
-      useEffect(() => {
-        fetch('https://chrisco-church-endpoints.onrender.com/comments/all')
-          .then(response => response.json())
-          .then(data => setComments(data))
-          .catch(error => console.error('Error fetching comments:', error));
-      }, []);
+      // useEffect(() => {
+      //   fetch('https://chrisco-church-endpoints.onrender.com/comments/all')
+      //     .then(response => response.json())
+      //     .then(data => setComments(data))
+      //     .catch(error => console.error('Error fetching comments:', error));
+      // }, []);
     
-      const handleCreateComment = (newComment) => {
-        setComments([...comments, newComment]);
-      };
+      // const handleCreateComment = (newComment) => {
+      //   setComments([...comments, newComment]);
+      // };
     
-      const handleDeleteComment = (commentId) => {
-        fetch(`samplefetch/${commentId}`, {
-          method: 'DELETE',
-        })
-          .then(() => {
-            setComments(comments.filter(comment => comment.id !== commentId));
-          })
-          .catch(error => console.error('Error deleting comment:', error));
-      };
+      // const handleDeleteComment = (commentId) => {
+      //   fetch(`samplefetch/${commentId}`, {
+      //     method: 'DELETE',
+      //   })
+      //     .then(() => {
+      //       setComments(comments.filter(comment => comment.id !== commentId));
+      //     })
+      //     .catch(error => console.error('Error deleting comment:', error));
+      // };
     
 
   
@@ -58,18 +58,18 @@ const Blog = () => {
       <div className="actions">
         {/* <button className="like-btn">Upvotes ({likes})</button>
         <button className="dislike-btn">Downvotes ({dislikes})</button> */}
-        <button className="comments" onClick={() => setShowComments(!showComments)}>
+        {/* <button className="comments" onClick={() => setShowComments(!showComments)}>
             Comments ({comments.length})
-        </button>
+        </button> */}
       </div>
     </div>
-    {showComments && (
+    {/* {showComments && (
         <Comment
         comments={comments}
         onCreateComment={handleCreateComment}
         onDeleteComment={handleDeleteComment}
         />
-      )}
+      )} */}
     <Footer/>
     </>
   );
