@@ -700,7 +700,7 @@ li {
 
 
 
-form {
+.contact-form {
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 10px;
