@@ -27,7 +27,7 @@ function App() {
           <Route path="/history" element={<History />} />
           <Route path="/departments" element={<Departments />} />
           <Route path="/blogs" element={<Blogs />} />
-          <Route path="/blog/" element={<Blog />} />
+          <Route path="/blog/:id" element={<Blog />} />
           <Route path="/login" element={<Login />} />
           <Route path="/panel" element={<AdminPanel />} />
           <Route path="/table" element={<EditableTable />} />

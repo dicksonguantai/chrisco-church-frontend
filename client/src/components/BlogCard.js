@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 function BlogCard({ id, title, blog_img, description }) {
   const navigate = useNavigate();
 
-  const handleReadMore = () => {
+  const handleReadMore = (id) => {
     navigate(`/blog/${id}`);
   };
 
@@ -17,7 +17,7 @@ function BlogCard({ id, title, blog_img, description }) {
       <div className="card-content">
         <h5 className="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">{title}</h5>
         <p className="font-normal text-gray-700 dark:text-gray-400">{description}</p>
-        <Button className='read-more' onClick={handleReadMore}>
+        <Button className='read-more' onClick={handleReadMore(id)}>
           Read more
           <svg className="-mr-1 ml-2 h-4 w-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
             <path
