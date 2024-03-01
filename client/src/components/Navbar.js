@@ -13,6 +13,7 @@ const Navbar = () => {
     localStorage.removeItem('isLoggedIn');
     // Redirect to the login page or homepage after logout
     // navigate("/login");
+    window.location.reload();
   };
 
   const toggleMenu = () => {

@@ -15,7 +15,6 @@ function Home() {
   const imageUrl = "/Images/20230827_124235.jpg";
 
   const [events, setEvents] = useState([]);
-  const [serviceProgram, setServiceProgram] = useState([]);
   const [showFullText, setShowFullText] = useState(false);
 
   useEffect(() => {
@@ -33,19 +32,7 @@ function Home() {
         console.error("Error fetching events:", error);
       });
 
-    fetch('https://chrisco-church-endpoints.onrender.com/services/all')
-      .then(response => {
-        if (!response.ok) {
-          throw new Error('Error fetching service program');
-        }
-        return response.json();
-      })
-      .then(data => {
-        setServiceProgram(data);
-      })
-      .catch(error => {
-        console.error('Error fetching service program:', error);
-      });
+    
   }, [events]);
 
   const handleReadMoreClick = () => {
@@ -83,20 +70,7 @@ function Home() {
           <img src={imageUrl} alt="background" className="image" />
         </div>
       </Slider>
-      <div className="service-program">
-        <h1><strong>Service Program</strong></h1>
-        <div className="service">
-          {serviceProgram.map((service, index) => (
-            <div key={index} className="service-grid">
-              <strong><p>{service.name}</p></strong>
-              <div className='service-footer'>
-                <p className="service-time">{service.start_time} - {service.end_time}</p>
-                <p>{service.service_type}</p>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
+      <Services/>
       <SpotifyEmbeds />
       <div className="container-banner-container-rounded">
       </div>
