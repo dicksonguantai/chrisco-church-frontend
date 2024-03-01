@@ -87,7 +87,9 @@ export default function AdminPanel() {
           </Tabs>
         );
       default:
-        return null;
+        return(
+          <h1>Your are not allowed to view This Page</h1>
+        );
     }
   };
 
