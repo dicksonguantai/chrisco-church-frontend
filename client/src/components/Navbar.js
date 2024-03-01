@@ -11,6 +11,12 @@ const Navbar = () => {
   const handleLogout = () => {
     // Clear the logged-in status from local storage
     localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('accessToken');
+      localStorage.removeItem('firstName');
+      localStorage.removeItem('lastName');
+      localStorage.removeItem('email');
+      localStorage.removeItem('role');
+      localStorage.removeItem('id')
     // Redirect to the login page or homepage after logout
     // navigate("/login");
     window.location.reload();
