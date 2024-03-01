@@ -87,10 +87,11 @@ function Home() {
             <button className="read-more" onClick={handleReadMoreClick}>Read More</button>
           </div>
         ))}
-      </div>
-      <Link to="/events">
+        <Link to="/events">
         <button className="explore-more">Explore more</button>
       </Link>
+      </div>
+      
       <Footer />
     </div>
   );
