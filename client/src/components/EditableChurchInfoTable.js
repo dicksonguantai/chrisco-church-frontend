@@ -36,7 +36,7 @@ function EditableChurchInfoTable() {
 
   const handleSave = async () => {
     try {
-      await axios.patch(`https://chrisco-church-endpoints.onrender.com/churchinfo/update/${churchInfo.id}`, churchInfo,config);
+      await axios.put(`https://chrisco-church-endpoints.onrender.com/churchinfo/update/1`, churchInfo,config);
       alert('Church information updated successfully');
     } catch (error) {
       console.error('Error updating church information:', error);

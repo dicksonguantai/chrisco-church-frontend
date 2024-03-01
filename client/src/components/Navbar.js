@@ -6,6 +6,14 @@ import Modal from './Modal';
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const isLoggedIn = localStorage.getItem('isLoggedIn') === 'true';
+  
+  const handleLogout = () => {
+    // Clear the logged-in status from local storage
+    localStorage.removeItem('isLoggedIn');
+    // Redirect to the login page or homepage after logout
+    // navigate("/login");
+  };
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -75,9 +83,15 @@ const Navbar = () => {
           <button className="give login-text nav-container">
             <b className="login">Give</b>
           </button>
-          <button className="nav-container" onClick={toggleModal}>
+          {/* <button className="nav-container" onClick={toggleModal}>
             <b className="login" >Login</b>
-          </button>
+          </button> */}
+          {isLoggedIn ? (
+              <button className="nav-container" onClick={handleLogout}>Logout</button>
+            ) : (
+            <button className="nav-container" onClick={toggleModal}>
+            <b className="login" >Login</b>
+          </button>            )}
         </div>
       </div>
       <Modal isOpen={isModalOpen} onClose={toggleModal} />
