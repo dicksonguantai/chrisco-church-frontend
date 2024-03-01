@@ -11,8 +11,15 @@ const Navbar = () => {
   const handleLogout = () => {
     // Clear the logged-in status from local storage
     localStorage.removeItem('isLoggedIn');
+    localStorage.removeItem('accessToken');
+      localStorage.removeItem('firstName');
+      localStorage.removeItem('lastName');
+      localStorage.removeItem('email');
+      localStorage.removeItem('role');
+      localStorage.removeItem('id')
     // Redirect to the login page or homepage after logout
     // navigate("/login");
+    window.location.reload();
   };
 
   const toggleMenu = () => {
@@ -43,7 +50,7 @@ const Navbar = () => {
         <li><Link to="/about-us">About Us</Link></li>
         <li><Link to="/departments">Departments</Link></li>
         <li><Link to="/blogs">Services</Link></li>
-        <li><Link to="/contact-us">Contact Us</Link></li>
+        <li><Link to="/contact-us">ContactUs</Link></li>
         <button className="give login-text nav-container sm-buttons">
             <b className="login">Give</b>
           </button>

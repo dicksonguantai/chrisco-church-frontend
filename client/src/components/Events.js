@@ -46,6 +46,7 @@ function Events(){
                         <h3 className="event-title">{event.title}</h3>
                         <p className="event-date">{event.date}</p>
                     </div>
+                    {/* <img src={event.event_img} alt={event.title}/> */}
                     <strong><p className="event-description">{event.description}</p></strong>
                     <p className="event-host"><strong>Host: </strong>{event.event_host}</p>
                     <div className="event-footer">
