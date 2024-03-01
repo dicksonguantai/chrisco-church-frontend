@@ -10,7 +10,6 @@ import Login from './components/Login';
 import Signup from './components/Signup';
 import Dashboard from './components/Dashboard';
 import ResetPassword from './components/ResetPassword';
-
 // import Contact from './components/Contact';
 import Events from './components/Events';
 import {Routes, Route } from 'react-router-dom';
