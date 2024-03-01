@@ -1,58 +1,52 @@
 import React, { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
 import axios from 'axios';
+import BlogCard from './BlogCard';
 import Header from './Header';
 import Footer from './Footer';
+import { useNavigate } from 'react-router-dom';
 
-const Blog = () => {
-  const { id } = useParams();
-  const [blog, setBlog] = useState(null);
+function Blogs() {
+  const [blogs, setBlogs] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await axios.get(`https://chrisco-church-endpoints.onrender.com/blogs/${id}`);
-        setBlog(response.data);
-      } catch (error) {
-        console.error('Error fetching data:', error);
-      }
-    };
+    fetchData();
+  }, []);
 
-    if (id) {
-      fetchData();
+  const fetchData = async () => {
+    try {
+      const response = await axios.get('https://chrisco-church-endpoints.onrender.com/blogs/all');
+      setBlogs(response.data);
+    } catch (error) {
+      console.error('Error fetching data:', error);
     }
+  };
 
-    // Cleanup function to reset blog state if id is not provided
-    return () => {
-      setBlog(null);
-    };
-  }, [id]);
-
-  if (!blog) {
-    return null; // Render null or loading indicator while fetching data
-  }
+  const handleReadMore = () => {
+    navigate('/blog');
+  };
 
   return (
     <>
       <Header />
-      <div className="b">
-        <h2 className="title">{blog.title}</h2>
-        <div className="meta">
-          <span className="writer">By {blog.writer}</span>
-          <span className="read-time">{blog.readTime} min read</span>
-        </div>
-        <p className="content">
-          {blog.content}
-        </p>
-        <div className="actions">
-          <button className="like-btn">Upvotes ({blog.likes})</button>
-          <button className="dislike-btn">Downvotes ({blog.dislikes})</button>
-          <span className="comments">Comments ({blog.comments})</span>
-        </div>
+      {/* <h2 className="text-center text-2xl font-bold border-b-2 border-black p-4">
+          Blogs
+        </h2> */}
+        <div className='block mx-auto md:flex blogs-card p-4'>
+        {blogs.map(blog => (
+          <BlogCard
+            key={blog.id}
+            id ={blog.id}
+            title={blog.title}
+            description={blog.description}
+            onClick={handleReadMore}
+          />
+        ))}
       </div>
+      
       <Footer />
     </>
   );
-};
+}
 
-export default Blog;
+export default Blogs;

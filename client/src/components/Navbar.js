@@ -43,7 +43,7 @@ const Navbar = () => {
         <li><Link to="/about-us">About Us</Link></li>
         <li><Link to="/departments">Departments</Link></li>
         <li><Link to="/blogs">Services</Link></li>
-        <li><Link to="/contact-us">Contact Us</Link></li>
+        <li><Link to="/contact-us">ContactUs</Link></li>
         <button className="give login-text nav-container sm-buttons">
             <b className="login">Give</b>
           </button>
