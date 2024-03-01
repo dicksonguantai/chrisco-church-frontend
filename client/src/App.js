@@ -12,6 +12,7 @@ import Dashboard from './components/Dashboard';
 import ResetPassword from './components/ResetPassword';
 
  import ContactUs from './components/ContactUs';
+
 import Events from './components/Events';
 import {Routes, Route } from 'react-router-dom';
 import AdminPanel from './components/AdminPanel';
