@@ -4,6 +4,12 @@ import { Table } from 'flowbite-react';
 import { TextInput, Button, Textarea } from 'flowbite-react';
 
 function EditableBlogsTable() {
+  const token = localStorage.getItem('accessToken');
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
   const [blogs, setBlogs] = useState([]);
   const [fields, setFields] = useState([]);
   const [newBlog, setNewBlog] = useState({});
@@ -42,7 +48,7 @@ function EditableBlogsTable() {
   const handleSave = async (id) => {
     try {
       const blogToUpdate = blogs.find(blog => blog.id === id);
-      await axios.patch(`https://chrisco-church-endpoints.onrender.com/blogs/${id}`, blogToUpdate);
+      await axios.patch(`https://chrisco-church-endpoints.onrender.com/blogs/update/${id}`, blogToUpdate,config);
       console.log(`Blog with ID ${id} updated successfully`);
     } catch (error) {
       console.error('Error updating blog:', error);
@@ -51,7 +57,7 @@ function EditableBlogsTable() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`https://chrisco-church-endpoints.onrender.com/blogs/${id}`);
+      await axios.delete(`https://chrisco-church-endpoints.onrender.com/blogs/delete/${id}`,config);
       setBlogs(prevBlogs => prevBlogs.filter(blog => blog.id !== id));
       console.log(`Blog with ID ${id} deleted successfully`);
     } catch (error) {
@@ -61,7 +67,7 @@ function EditableBlogsTable() {
 
   const handleAddBlog = async () => {
     try {
-      const response = await axios.post('https://chrisco-church-endpoints.onrender.com/blogs', newBlog);
+      const response = await axios.post('https://chrisco-church-endpoints.onrender.com/blogs/new', newBlog,config);
       setBlogs(prevBlogs => [...prevBlogs, response.data]);
       console.log('New blog added successfully');
     } catch (error) {
