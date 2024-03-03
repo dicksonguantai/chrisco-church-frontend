@@ -1,11 +1,14 @@
 
  .image-container {
     position: relative;
+    width: 100%;
+    overflow: hidden;
     
   }
 
   .slider{
     margin-bottom: 20px;
+    width: 100%;
   }
     
 
@@ -76,6 +79,7 @@ text-align:left;
 margin: 20px;
 padding: 10px;
 padding-left: 20px;
+font-size: 2.8rem;
 border-top-left-radius: 10px;
 border-top-right-radius: 10px;
 font-weight: lighter;
@@ -103,9 +107,9 @@ font-weight: bold;
 
 .event-grid {
 position: relative;
-/* border: 1px solid #ccc; */
+border: 1px solid #ccc;
 padding: 10px;
-/* border-radius: 10px; */
+border-radius: 10px;
 background-color:aliceblue;
 display: flex;
 flex-direction: column;
@@ -114,12 +118,15 @@ align-items: center;
 }
 
 .event-grid img {
-max-width: 100%;
+/* max-width: 100%;
 height: auto;
-margin-bottom: 10px;
+margin-bottom: 10px; */
 width: 100%; 
 height: 100%; 
 object-fit: cover;
+border-radius: 10px;
+box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+
 }
 
 .event-grid h3 {
@@ -166,7 +173,7 @@ background-color: #b60a0a;
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
 .events {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
     gap: 20px;
     padding: 20px;
     margin-top: 20px;
