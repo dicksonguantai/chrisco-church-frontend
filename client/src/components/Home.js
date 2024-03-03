@@ -87,10 +87,13 @@ function Home() {
             <button className="read-more" onClick={handleReadMoreClick}>Read More</button>
           </div>
         ))}
-        <Link to="/events">
-        <button className="explore-more">Explore more</button>
+      </div>
+      <div className="explore-more-container">
+      <Link to="/events">
+        <button className="explore-more-button">Explore more</button>
       </Link>
       </div>
+      
       
       <Footer />
     </div>
