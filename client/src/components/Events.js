@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import EventsDetails from "./EventsDetails";
+import './Events.css';
 
 function Events(){
 
