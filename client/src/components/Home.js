@@ -9,9 +9,10 @@ import 'slick-carousel/slick/slick-theme.css';
 import Youtube from './Youtube';
 import { Link } from 'react-router-dom';
 import Services from "./Services";
+import './Home.css';
 
 function Home() {
-  const imageUrl2 = "/Images/Homepic.png";
+  const imageUrl2 = "/Images/20230818_142741.jpg";
   const imageUrl = "/Images/20230827_124235.jpg";
 
   const [events, setEvents] = useState([]);
@@ -53,14 +54,13 @@ function Home() {
   return (
     <div>
       <Header />
-      <Slider {...settings}>
+      <Slider {...settings} className='slider'>
         <div className="image-container">
           <img src={imageUrl} alt="background" className="image" />
           <div className="overlay">
             <h2 className="title">Welcome to Chrisco Central Church</h2>
             <h3>Join our community of Faith</h3>
             <p className="description">Loving God, loving others and serving the world through the words of the Lord</p>
-            <button className="read-more">Read More</button>
           </div>
         </div>
         <div className="image-container">
