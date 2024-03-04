@@ -2,6 +2,7 @@ import React, { useRef } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import { FaPhone, FaMapMarkerAlt,  FaEnvelope} from 'react-icons/fa';
+import "./AboutUs.css";
 
 const ContactUs = () => {
   const form = useRef();

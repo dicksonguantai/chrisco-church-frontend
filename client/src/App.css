@@ -647,7 +647,7 @@ li {
   margin-bottom: 1.5rem;
 }
 
-.contact-methods {
+/* .contact-methods {
   display: flex;
   justify-content: space-around;
   margin-bottom: 2rem;
@@ -697,10 +697,10 @@ li {
     width: 45%;
   }
 }
+ */
 
 
-
-.contact-form {
+/* .contact-form {
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: 10px;
@@ -709,11 +709,11 @@ li {
   margin-top: 30px;
   align-items: center;
   margin-left: 500px;
-  margin-right: 500px;
+  margin-right: 500px; */
   /* background-color: rgb(180, 162, 162); */
-}
+/* } */
 
-label {
+/* label {
   font-weight: bold;
   margin-bottom: 5px;
   display: block;
@@ -743,18 +743,18 @@ input[type="submit"] {
   margin-top: 10px;
   margin-left: 300px;
   margin-right: 300px;
-}
+} */
 
 /* input[type="submit"]:hover {
   background-color: red;
 } */
 
-.email h2{
+/* .email h2{
   text-align: center;
   font-size: xx-large;
   
   color: #163691;
-}
+} */
 
 .mission,
 .vision {
