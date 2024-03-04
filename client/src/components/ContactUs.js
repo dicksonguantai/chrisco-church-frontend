@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import { FaPhone, FaMapMarkerAlt,  FaEnvelope} from 'react-icons/fa';
-import "./AboutUs.css";
+import "./contactUs.css";
 
 const ContactUs = () => {
   const form = useRef();
@@ -42,6 +42,7 @@ const ContactUs = () => {
       <Header />
       <div className="contact-us-container">
         <div className="contact-content">
+        <img src="contact.png"    />
           <h1 className="title">WE WANT TO HEAR FROM YOU</h1>
           <p>
             There are many ways for you to connect with us. Reach out to us by phone, Email, or Social Media and let us
