@@ -512,12 +512,6 @@ li {
     right: 10px;
   }
 
-  .departments {
-    grid-template-columns: repeat(1, 1fr);
-    gap: 10px;
-    margin-left: 10px;
-    margin-right: 10px;
-  }
 
   .service {
     grid-template-columns: repeat(1, 1fr);
