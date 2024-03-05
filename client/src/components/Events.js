@@ -2,7 +2,9 @@ import React from "react";
 import { useState, useEffect } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
-import EventsDetails from "./EventsDetails";
+// import EventsDetails from "./EventsDetails";
+import './Events.css';
+import Modal from "react-modal";
 
 function Events(){
 
@@ -27,6 +29,10 @@ function Events(){
 
     const handleEventClick = (event) => {
     setSelectedEvent(event);
+  };
+
+  const handleCloseModal = () => {
+    setSelectedEvent(null);
   };
 
     return(
@@ -56,7 +62,27 @@ function Events(){
                 </div>
             ))}
             </div>
-            {selectedEvent && <EventsDetails event={selectedEvent} />}
+            <Modal isOpen={selectedEvent!==null} onRequestClose={handleCloseModal}>
+            {selectedEvent &&(
+                <div className="event-popup">
+                <h1>Event Details</h1>
+                <div className="event-popup-header">
+                    <div className="event-headers">
+                        <p className="event-popup-id">{selectedEvent.id}</p>
+                        <h3 className="event-popup-title">{selectedEvent.title}</h3>
+                    </div>
+                    <p><strong>Theme: </strong>{selectedEvent.theme}</p>
+                    <p><strong>Scripture: </strong>{selectedEvent.scripture}</p>
+                </div>
+                <div className="event-popup-location"><strong>Location: </strong>{selectedEvent.location}</div>
+                <p className="event-popup-date"><strong>Date: </strong>{selectedEvent.date}</p>
+                <p className="event-popup-time"><strong>Time: </strong>{selectedEvent.start_time}-{Event.end_time}</p>
+                <p className="event-popup-host"><strong>Host: </strong>{selectedEvent.event_host}</p>
+                <p className="event-popup-description"><strong>Description: </strong>{selectedEvent.description}</p>
+                <button className="event-popup-button" onClick={handleCloseModal}>X</button>
+            </div>
+            )}
+            </Modal>
             <div className="events-info">
             <strong><h2 className="events-h2">Don't miss the latest event's drop</h2></strong>
             <p>Be the first to know about our events. Sign up for special announcements, information</p>
