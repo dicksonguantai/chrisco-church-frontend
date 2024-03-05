@@ -325,13 +325,11 @@ border-radius: 10px;
   display: block;
   width: 120px;
   padding: 10px;
-  margin: 0 auto;
-
-  margin-top: 10px;
-  margin-bottom: 10px;
+  margin: 0 auto 10px auto; /* 0 auto for horizontal centering, 10px top and bottom margin */
   border-radius: 5%;
-
+  justify-content: center;
 }
+
 
 .explore-more:hover{
   background-color: #b60a0a;
