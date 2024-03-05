@@ -187,6 +187,11 @@
   .trinity-image {
     flex: 1;
     padding-left: 215px; /* Adjust as needed */
+    
+  }
+
+  .trinity-image img {
+    width: 55%;
   }
   
   .baptism-container {
@@ -222,6 +227,7 @@
   
   .baptism-image img {
     margin-left: 250px;
+    width: 46%;
   }
   
   .baptism-picture {
@@ -258,6 +264,7 @@
   .church-community-image {
     max-width: 40%; 
     height: auto;
+    background-color: white;
   }
   
   .explore-more {
