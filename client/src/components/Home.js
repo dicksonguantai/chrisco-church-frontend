@@ -81,10 +81,13 @@ function Home() {
       <div className="events">
         {events.map(event => (
           <div key={event.id} className="event-grid">
-            <img src={event.event_img} alt={event.title} />
-            <h3>{event.title}</h3>
-            {showFullText ? <p>{event.description}</p> : <p>{event.description.slice(0, 50)}</p>}
-            <button className="read-more" onClick={handleReadMoreClick}>Read More</button>
+            <div className='event'>
+              <div className="event-img"></div>
+                <img src={event.event_img} alt={event.title} />
+                <h3>{event.title}</h3>
+                {showFullText ? <p>{event.description}</p> : <p>{event.description.slice(0, 55)}</p>}
+                <button className="read-more" onClick={handleReadMoreClick}>Read More</button>
+            </div>
           </div>
         ))}
       </div>
