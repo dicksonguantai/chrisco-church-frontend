@@ -1,7 +1,7 @@
 import React, { useRef } from 'react';
 import Header from './Header';
 import Footer from './Footer';
-import { FaPhone, FaMapMarkerAlt,  FaEnvelope} from 'react-icons/fa';
+import { FaPhone, FaMapMarkerAlt, FaEnvelope } from 'react-icons/fa';
 import "./contactUs.css";
 
 const ContactUs = () => {
@@ -37,17 +37,19 @@ const ContactUs = () => {
   };
 
   return (
-    
     <div>
       <Header />
       <div className="contact-us-container">
         <div className="contact-content">
-        <img src="contact.png"    />
-          <h1 className="title">WE WANT TO HEAR FROM YOU</h1>
-          <p>
-            There are many ways for you to connect with us. Reach out to us by phone, Email, or Social Media and let us
-            know how we can help.
-          </p>
+          <div className="contact-info">
+            <img src="contact.png" alt="Contact" className="contact-image" />
+            <div>
+              <h1 className="title">WE WANT TO HEAR FROM YOU</h1>
+              <p>
+                There are many ways for you to connect with us. Reach out to us by phone, email, or social media and let us know how we can help.
+              </p>
+            </div>
+          </div>
           <div className="contact-methods">
             <ContactMethod icon={<FaPhone />} title="Phone" content="+254745 459667" />
             <ContactMethod icon={<FaEnvelope />} title="Email" content="chrisco.central@yahoo.com" />
@@ -56,9 +58,11 @@ const ContactUs = () => {
         </div>
       </div>
 
+      <div className="map-background">
       <div className="email">
+        
+        <form className="contact-form" ref={form} onSubmit={sendInquiry}>
         <h2>Contact Us</h2>
-        <form className="contact-form"  ref={form} onSubmit={sendInquiry}>
           <label>Name</label>
           <input type="text" name="name" />
           <label>Email</label>
@@ -67,8 +71,10 @@ const ContactUs = () => {
           <textarea name="inquiry" />
           <input type="submit" value="Send Message --->" className="button" />
         </form>
+        </div>
+        </div>
         <img src="map.png" alt="maping" className="map" />
-      </div>
+      
       <Footer />
     </div>
   );
@@ -87,3 +93,4 @@ const ContactMethod = ({ icon, title, content }) => {
 };
 
 export default ContactUs;
+
