@@ -205,3 +205,26 @@ height: 400px;
     margin-bottom: 1.5rem;
   }
 }
+
+@media only screen and (max-width: 768px) {
+  .container-banner-container-rounded,
+  .container-banner-container-round {
+  height: 300px; 
+  }
+
+  .events {
+    grid-template-columns: repeat(2, 1fr); 
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
+  .events-h1 {
+    margin: 10px; 
+    padding: 5px; 
+    font-size: 1.5rem; 
+  }
+
+  .event-grid {
+    padding: 5px; 
+  }
+}
