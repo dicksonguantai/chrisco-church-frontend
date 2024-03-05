@@ -5,13 +5,8 @@
     padding: 30px;
   }
 
-.events-h2, .events-h1{
+.events-h2{
 color:#1b1f83;
-}
-
-.events h3{
-font-size: larger;
-font-weight: bold;
 }
 
 .events h3{
@@ -34,17 +29,23 @@ text-align: center;
 justify-items: center;
 }
 
+.event-id{
+  border: 1px solid black;
+  border-radius: 5px;
+  background-color: #1b1f83;
+  color: white;
+  padding: 5px;
+}
+
 .event-grid {
 position: relative;
-/* border: 1px solid #ccc; */
+border: 1px solid #ccc;
 padding: 10px;
-/* border-radius: 10px; */
+border-radius: 10px;
 background-color:aliceblue;
-display: flex;
-flex-direction: column;
-/* justify-content: center;  */
-align-items: center;
-cursor: pointer;
+display: grid;
+grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+gap: 20px;
 }
 
 
@@ -53,28 +54,16 @@ margin-top: 10px;
 }
 
 .event-header {
-display: flex;
-flex-direction: column;
-justify-content:space-between;
-align-items: center;
-margin-bottom: 15px;
-font-weight: bold;
-color: #1b1f83;
-margin: 10px;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    margin-bottom: 10px; 
 }
 
 .event-footer {
 display: flex;
 justify-content: space-between;
 align-items: center;
-}
-
-.event-title {
-margin-top: 0;
-padding: 10px;
-position: absolute;
-top: 5px;
-/* left: 30px;  */
 }
 
 .event-location{
@@ -91,14 +80,6 @@ top: 5px;
   right: 5px;
 }
 
-.event-date {
-margin-top: 0;
-right: 0;
-top: 5px;
-position: absolute;
-right: 5px;
-}
-
 .event-description {
 text-align: center;
 margin-bottom: 15px;
@@ -109,19 +90,6 @@ padding: 10px;
 .event-host{
 margin-bottom: 15px;
 padding: 10px;
-}
-
-.event-id{
-border: 1px solid black;
-border-radius: 10px;
-background-color: #1b1f83;
-color: white;
-padding: 5px;
-padding-left: 10px;
-padding-right: 10px;
-position: absolute;
-left: 5px;
-top: 5px;
 }
 
 .events-info{
@@ -176,6 +144,15 @@ margin-top: 0;
   margin-bottom: 15px;
 }
 
+.ReactModal__Content {
+  position: fixed; 
+  transform: translate(50%, 0%);
+  padding: 20px; 
+  max-width: 50%;
+  max-height: 100%; 
+  overflow: auto; 
+}
+
 .event-popup-button{
   top: 0;
   right: 0;
@@ -183,6 +160,8 @@ margin-top: 0;
   margin-top: 10px;
   margin-right: 10px;
   font-weight: bold;
+  background-color: red;
+  color: white;
   border: 1px solid black;
   padding : 5px;
   border-radius: 5px;
@@ -203,5 +182,24 @@ margin-top: 0;
   .event-popup-button {
     margin-left: 10px;
     margin-right: 10px;
+  }
+
+  .event-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .event-location,
+  .event-time {
+    position: static;
+    margin-bottom: 5px;
+  }
+
+  .ReactModal__Content {
+    max-width: 90%; 
+    max-height: 90%; 
+    padding: 10px; 
+    margin-top: -10%; 
+    margin-left: -55%; 
   }
 }
