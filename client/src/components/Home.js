@@ -54,6 +54,7 @@ function Home() {
   return (
     <div>
       <Header />
+      <div className='slider-container'>
       <Slider {...settings} className='slider'>
         <div className="image-container">
           <img src={imageUrl} alt="background" className="image" />
@@ -70,6 +71,7 @@ function Home() {
           <img src={imageUrl} alt="background" className="image" />
         </div>
       </Slider>
+      </div>
       <Services/>
       <SpotifyEmbeds />
       <div className="container-banner-container-rounded">
@@ -81,10 +83,13 @@ function Home() {
       <div className="events">
         {events.map(event => (
           <div key={event.id} className="event-grid">
-            <img src={event.event_img} alt={event.title} />
-            <h3>{event.title}</h3>
-            {showFullText ? <p>{event.description}</p> : <p>{event.description.slice(0, 50)}</p>}
-            <button className="read-more" onClick={handleReadMoreClick}>Read More</button>
+            <div className='event'>
+              <div className="event-img"></div>
+                <img src={event.event_img} alt={event.title} />
+                <h3>{event.title}</h3>
+                {showFullText ? <p>{event.description}</p> : <p>{event.description.slice(0, 55)}</p>}
+                <button className="read-more" onClick={handleReadMoreClick}>Read More</button>
+            </div>
           </div>
         ))}
       </div>

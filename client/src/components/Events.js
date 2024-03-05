@@ -57,7 +57,7 @@ function Events(){
                     <p className="event-host"><strong>Host: </strong>{event.event_host}</p>
                     <div className="event-footer">
                         <p className="event-location"><strong>Location: </strong>{event.location}</p>
-                        <p className="event-time">{event.start_time}-{event.end_time}</p>
+                        <p className="event-time"><strong>Time: </strong>{event.start_time}-{event.end_time}</p>
                     </div>
                 </div>
             ))}
@@ -76,7 +76,7 @@ function Events(){
                 </div>
                 <div className="event-popup-location"><strong>Location: </strong>{selectedEvent.location}</div>
                 <p className="event-popup-date"><strong>Date: </strong>{selectedEvent.date}</p>
-                <p className="event-popup-time"><strong>Time: </strong>{selectedEvent.start_time}-{Event.end_time}</p>
+                <p className="event-popup-time"><strong>Time: </strong>{selectedEvent.start_time}-{selectedEvent.end_time}</p>
                 <p className="event-popup-host"><strong>Host: </strong>{selectedEvent.event_host}</p>
                 <p className="event-popup-description"><strong>Description: </strong>{selectedEvent.description}</p>
                 <button className="event-popup-button" onClick={handleCloseModal}>X</button>
@@ -91,7 +91,7 @@ function Events(){
             <p>Prepare and make the most of every event with tips and tricks</p>
             <strong><h3 className="events-h3">Know the lineup</h3></strong>
             <p>Take a peek at who is taking the stage and see how you can sign up yourself</p>
-            <strong><h3 className="events-h3">Save more durimg early registartion</h3></strong>
+            <strong><h3 className="events-h3">Save more during early registartion</h3></strong>
             <p>Know exactly when registration opens and take advantage of the best price.</p>
             </div>
             <Footer />
