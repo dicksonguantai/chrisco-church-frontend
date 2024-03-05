@@ -54,6 +54,7 @@ function Home() {
   return (
     <div>
       <Header />
+      <div className='slider-container'>
       <Slider {...settings} className='slider'>
         <div className="image-container">
           <img src={imageUrl} alt="background" className="image" />
@@ -70,6 +71,7 @@ function Home() {
           <img src={imageUrl} alt="background" className="image" />
         </div>
       </Slider>
+      </div>
       <Services/>
       <SpotifyEmbeds />
       <div className="container-banner-container-rounded">
