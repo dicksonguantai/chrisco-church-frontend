@@ -2,7 +2,23 @@ import React, { useRef } from 'react';
 import Header from './Header';
 import Footer from './Footer';
 import { FaPhone, FaMapMarkerAlt, FaEnvelope } from 'react-icons/fa';
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
+import L from 'leaflet'; // Import Leaflet library
+import 'leaflet/dist/leaflet.css';
 import "./contactUs.css";
+
+// Import the default marker icon from leaflet
+import icon from 'leaflet/dist/images/marker-icon.png';
+import iconShadow from 'leaflet/dist/images/marker-shadow.png';
+
+// Override the default icon URLs with the correct paths
+let DefaultIcon = L.icon({
+    iconUrl: icon,
+    shadowUrl: iconShadow
+});
+
+// Set the default icon for Leaflet
+L.Marker.prototype.options.icon = DefaultIcon;
 
 const ContactUs = () => {
   const form = useRef();
@@ -59,22 +75,33 @@ const ContactUs = () => {
       </div>
 
       <div className="map-background">
-      <div className="email">
-        
-        <form className="contact-form" ref={form} onSubmit={sendInquiry}>
-        <h2>Contact Us</h2>
-          <label>Name</label>
-          <input type="text" name="name" />
-          <label>Email</label>
-          <input type="email" name="email" />
-          <label>Message</label>
-          <textarea name="inquiry" />
-          <input type="submit" value="Send Message --->" className="button" />
-        </form>
+        <div className="email">
+          <form className="contact-form" ref={form} onSubmit={sendInquiry}>
+            <h2>Contact Us</h2>
+            <label>Name</label>
+            <input type="text" name="name" />
+            <label>Email</label>
+            <input type="email" name="email" />
+            <label>Message</label>
+            <textarea name="inquiry" />
+            <input type="submit" value="Send Message --->" className="button" />
+          </form>
         </div>
-        </div>
-        <img src="map.png" alt="maping" className="map" />
-      
+      </div>
+
+      <div className="map-container">
+        <MapContainer center={[-1.30636, 36.77686]} zoom={15} className="map">
+          <TileLayer
+            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          />
+          <Marker position={[-1.30636, 36.77686]}>
+            <Popup>
+              Chrisco Central Church
+            </Popup>
+          </Marker>
+        </MapContainer>
+      </div>
+
       <Footer />
     </div>
   );
@@ -93,4 +120,5 @@ const ContactMethod = ({ icon, title, content }) => {
 };
 
 export default ContactUs;
+
 
