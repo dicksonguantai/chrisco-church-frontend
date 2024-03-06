@@ -26,9 +26,9 @@ function ScrollToTop() {
 
   return (
     <button
-      className={`scroll-to-top ${showButton ? 'show' : ''}`}
+      className={`scroll-to-top ${showButton ? 'show' : ''}` }
       onClick={scrollToTop}
-      style={{ display: showButton ? 'block' : 'none' }}
+      style={{ display: showButton ? 'flex' : 'none' }}
     >
       <FaArrowCircleUp className='align-center' />
     </button>
