@@ -93,7 +93,7 @@ function EditableUsersTable() {
       <Table>
         <thead>
           <tr>
-            <th className="px-4 py-2">ID</th>
+            <th >ID</th>
             <th>Firstname</th>
             <th>Lastname</th>
             <th>Email</th>
@@ -104,19 +104,19 @@ function EditableUsersTable() {
           {users.map((user) => (
             <tr key={user.id}>
               <td className="px-4 py-2">{user.id}</td>
-              <td className="px-4 py-2">
+              <td>
                 <TextInput
                   value={user.firstname}
                   onChange={(e) => handleInputChange(e, user.id, "firstname")}
                 />
               </td>
-              <td>
+              <td className="px-4 py-2">
                 <TextInput
                   value={user.lastname}
                   onChange={(e) => handleInputChange(e, user.id, "lastname")}
                 />
               </td>
-              <td>
+              <td >
                 <TextInput
                   value={user.email}
                   onChange={(e) => handleInputChange(e, user.id, "email")}
@@ -139,14 +139,14 @@ function EditableUsersTable() {
             <td>
               
             </td>
-            <td>
+            <td className="px-4 py-2">
               <TextInput
                 value={newUser.firstname || ""}
                 onChange={(e) => handleNewUserInputChange(e, "firstname")}
                 placeholder="First Name"
               />
             </td>
-            <td>
+            <td className="px-4 py-2">
               <TextInput
                 value={newUser.lastname || ""}
                 onChange={(e) => handleNewUserInputChange(e, "lastname")}

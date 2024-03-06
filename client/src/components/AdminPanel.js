@@ -6,6 +6,9 @@ import { GiPartyPopper } from "react-icons/gi";
 import { FcDepartment } from "react-icons/fc";
 import { FaBlog } from "react-icons/fa";
 import { GiPrayer } from "react-icons/gi";
+import { TbProgressHelp } from "react-icons/tb";
+import { MdOutlineMailOutline } from "react-icons/md";
+
 import EditableEventsTable from './EditableEventsTable';
 import { FaInfoCircle } from "react-icons/fa";
 import EditableDepartmentsTable from './EditableDepartmentsTable';
@@ -15,6 +18,8 @@ import UserDetails from './UserDetails';
 import Header from './Header';
 import EditableBlogsTable from './EditableBlogsTable';
 import PrayerRequestsAdmin from './PrayerRequestsAdmin';
+import InquiriesTable from './InquiriesTable';
+import Subscriptions from './Subscriptions';
 
 export default function AdminPanel() {
   const role = localStorage.getItem('role') || '';
@@ -29,6 +34,12 @@ export default function AdminPanel() {
             </Tabs.Item>
             <Tabs.Item title="Prayer Requests" icon={GiPrayer}>
               <PrayerRequestsAdmin />
+            </Tabs.Item>
+            <Tabs.Item title="Inquiries" icon={TbProgressHelp}>
+              <InquiriesTable />
+            </Tabs.Item>
+            <Tabs.Item title="Subscribers" icon={MdOutlineMailOutline}>
+              <Subscriptions/>
             </Tabs.Item>
             <Tabs.Item title="Church info" icon={FaInfoCircle}>
               <EditableChurchInfoTable />
@@ -76,7 +87,9 @@ export default function AdminPanel() {
           </Tabs>
         );
       default:
-        return null;
+        return(
+          <h1>Your are not allowed to view This Page</h1>
+        );
     }
   };
 

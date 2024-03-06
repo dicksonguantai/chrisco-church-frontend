@@ -1,14 +1,20 @@
-import React from "react";
-import { useState, useEffect } from "react";
-import Header from "./Header";
-import Footer from "./Footer";
-import SpotifyEmbeds from "./Spotify";
-import Slider from "./Slider1";
-import Youtube from "./Youtube";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { useState, useEffect } from 'react';
+import Header from './Header';
+import Footer from './Footer';
+import SpotifyEmbeds from './Spotify';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import Youtube from './Youtube';
+import { Link } from 'react-router-dom';
 import Services from "./Services";
+import './Home.css';
 
 function Home() {
+  const imageUrl2 = "/Images/20230818_142741.jpg";
+  const imageUrl = "/Images/20230827_124235.jpg";
+
   const [events, setEvents] = useState([]);
   const [showFullText, setShowFullText] = useState(false);
 
@@ -26,49 +32,78 @@ function Home() {
       .catch((error) => {
         console.error("Error fetching events:", error);
       });
+
+    
   }, [events]);
 
   const handleReadMoreClick = () => {
     setShowFullText(true);
   };
 
+  var settings = {
+    dots: true,
+    infinite: true,
+    arrows: true,
+    speed: 1000,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    vertical: false,
+    verticalSwiping: false,
+  };
+
   return (
     <div>
       <Header />
-      <Slider />
-
-      <Services />
+      <div className='slider-container'>
+      <Slider {...settings} className='slider'>
+        <div className="image-container">
+          <img src={imageUrl} alt="background" className="image" />
+          <div className="overlay">
+            <h2 className="title">Welcome to Chrisco Central Church</h2>
+            <h3>Join our community of Faith</h3>
+            <p className="description">Loving God, loving others and serving the world through the words of the Lord</p>
+          </div>
+        </div>
+        <div className="image-container">
+          <img src={imageUrl2} alt="background" className="image" />
+        </div>
+        <div className="image-container">
+          <img src={imageUrl} alt="background" className="image" />
+        </div>
+      </Slider>
+      </div>
+      <Services/>
       <SpotifyEmbeds />
+      <div className="container-banner-container-rounded">
+      </div>
       <Youtube />
-      <h1 className="text-center text-2xl font-bold border-b-2 border-black p-2">
-        <strong >Events</strong>
-      </h1>
-      <div className="events md:block">
-        {events.map((event) => (
+      <div className="container-banner-container-round">
+      </div>
+      <h1 className='events-h1'><strong>Events</strong></h1>
+      <div className="events">
+        {events.map(event => (
           <div key={event.id} className="event-grid">
-            {/* <img src={event.event_img} alt={event.title}/> */}
-            <img src="/baptism.png" alt={event.title} />
-            <h3>{event.title}</h3>
-            {showFullText ? (
-              <p>{event.description}</p>
-            ) : (
-              <p>{event.description.slice(0, 50)}</p>
-            )}
-            <button className="read-more" onClick={handleReadMoreClick}>
-              Read More
-            </button>
+            <div className='event'>
+              <div className="event-img"></div>
+                <img src={event.event_img} alt={event.title} />
+                <h3>{event.title}</h3>
+                {showFullText ? <p>{event.description}</p> : <p>{event.description.slice(0, 55)}</p>}
+                <button className="read-more" onClick={handleReadMoreClick}>Read More</button>
+            </div>
           </div>
         ))}
-        
-        <button className=" mx-auto"><Link to="/events">Explore more</Link></button>
-      
+      </div>
+      <div className="explore-more-container">
+      <Link to="/events">
+        <button className="explore-more-button">Explore more</button>
+      </Link>
       </div>
       
-
       
-      <Footer/>
+      <Footer />
     </div>
   );
 }
 
 export default Home;
+

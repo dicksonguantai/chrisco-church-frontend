@@ -5,6 +5,13 @@ import { TextInput,Button } from 'flowbite-react';
 
 function EditableChurchInfoTable() {
   const [churchInfo, setChurchInfo] = useState(null);
+  const token = localStorage.getItem('accessToken')
+   const config = {
+          headers: { 
+            Authorization: `Bearer ${token}`
+
+          },
+   }
 
   useEffect(() => {
     fetchData();
@@ -29,8 +36,8 @@ function EditableChurchInfoTable() {
 
   const handleSave = async () => {
     try {
-      await axios.patch('https://chrisco-church-endpoints.onrender.com/churchinfo/all', churchInfo);
-      console.log('Church information updated successfully');
+      await axios.put(`https://chrisco-church-endpoints.onrender.com/churchinfo/update/1`, churchInfo,config);
+      alert('Church information updated successfully');
     } catch (error) {
       console.error('Error updating church information:', error);
     }

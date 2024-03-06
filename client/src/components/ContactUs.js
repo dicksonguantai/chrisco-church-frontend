@@ -118,7 +118,3 @@ const ContactMethod = ({ icon, title, content }) => {
     </div>
   );
 };
-
-export default ContactUs;
-
-

@@ -4,6 +4,13 @@ import { Table } from 'flowbite-react';
 import { TextInput, Button } from 'flowbite-react';
 
 function EditableDepartmentsTable() {
+  const token = localStorage.getItem('accessToken');
+  const config = {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  };
+
   const [departments, setDepartments] = useState([]);
   const [fields, setFields] = useState([]);
   const [newDepartment, setNewDepartment] = useState({});
@@ -42,7 +49,7 @@ function EditableDepartmentsTable() {
   const handleSave = async (id) => {
     try {
       const departmentToUpdate = departments.find(department => department.id === id);
-      await axios.patch(`https://chrisco-church-endpoints.onrender.com/departments/${id}`, departmentToUpdate);
+      await axios.patch(`https://chrisco-church-endpoints.onrender.com/departments/update/${id}`, departmentToUpdate,config);
       console.log(`Department with ID ${id} updated successfully`);
     } catch (error) {
       console.error('Error updating department:', error);
@@ -51,7 +58,7 @@ function EditableDepartmentsTable() {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`https://chrisco-church-endpoints.onrender.com/departments/${id}`);
+      await axios.delete(`https://chrisco-church-endpoints.onrender.com/departments/delete/${id}`,config);
       setDepartments(prevDepartments => prevDepartments.filter(department => department.id !== id));
       console.log(`Department with ID ${id} deleted successfully`);
     } catch (error) {
@@ -61,7 +68,7 @@ function EditableDepartmentsTable() {
 
   const handleAddDepartment = async () => {
     try {
-      const response = await axios.post('https://chrisco-church-endpoints.onrender.com/departments', newDepartment);
+      const response = await axios.post('https://chrisco-church-endpoints.onrender.com/departments/new', newDepartment,config);
       setDepartments(prevDepartments => [...prevDepartments, response.data]);
       console.log('New department added successfully');
     } catch (error) {
