@@ -2,6 +2,7 @@ import "./Navbar.css";
 import {Link} from 'react-router-dom'
 import { useState } from "react";
 import Modal from './Modal';
+import React from "react";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(true);
@@ -30,8 +31,14 @@ const Navbar = () => {
     setIsModalOpen(!isModalOpen);
   };
 
-
-  return (
+  
+    const scrollToBottom = () => {
+      window.scrollTo({
+        top: document.documentElement.scrollHeight,
+        behavior: 'smooth'
+      });}
+      
+   return (
     <header className="nav-link-krgcjpg-parent">
       <img
         className="nav-link-krgcjpg"
@@ -55,7 +62,7 @@ const Navbar = () => {
             <b className="login">Give</b>
           </button>
 
-          <button className="nav-container sm-buttons">
+          <button className="nav-container sm-buttons" onClick={scrollToBottom}>
             <b className="login">Login</b>
           </button>
       </ul>
@@ -87,7 +94,7 @@ const Navbar = () => {
             <Link to="/contact-us">Contact Us</Link>
             </div>
           </div>
-          <button className="give login-text nav-container">
+          <button className="give login-text nav-container" onClick={scrollToBottom}>
             <b className="login">Give</b>
           </button>
           {/* <button className="nav-container" onClick={toggleModal}>
@@ -105,4 +112,4 @@ const Navbar = () => {
     </header>
   )}
 
-  export default Navbar;
+ export default Navbar

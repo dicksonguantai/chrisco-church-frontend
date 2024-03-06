@@ -35,7 +35,7 @@ const Blog = () => {
   return (
     <>
       <Header />
-      <div className="b">
+      <div className="p-6">
         <h2 className="title">{blog.title}</h2>
         <div className="meta">
           <span className="writer">By {blog.writer}</span>
