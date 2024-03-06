@@ -84,29 +84,32 @@ function Home() {
       <div className="container-banner-container-round">
       </div>
       <h1 className='events-h1'><strong>Events</strong></h1>
-      <div className="events">
-        {events.map(event => (
-          <div key={event.id} className="event-grid">
-            <div className='event'>
-                <div className="event-img">
-                  <img src={event.event_img} alt={event.title} />
+      <div className='events-container'>
+          <div className="events">
+            {events.map(event => (
+              <div key={event.id} className="event-grid">
+                <div className='event'>
+                    <div className="event-img">
+                      <img src={event.event_img} alt={event.title} />
+                    </div>
+                      <h3>{event.title}</h3>
+                      {isEventExpanded(event.id) ? <p>{event.description}</p> : <p>{event.description.slice(0, 55)}</p>}
+                      <button className="read-more" onClick={() => handleReadMoreClick(event.id)}>Read More</button>
                 </div>
-                  <h3>{event.title}</h3>
-                  {isEventExpanded(event.id) ? <p>{event.description}</p> : <p>{event.description.slice(0, 55)}</p>}
-                  <button className="read-more" onClick={() => handleReadMoreClick(event.id)}>Read More</button>
+              </div>
+            ))}
+          </div>
+          <div className="explore-more-container">
+              <Link to="/events">
+                <button className="explore-more-button">Explore more</button>
+              </Link>
             </div>
-          </div>
-        ))}
-        <div className="explore-more-container">
-        <Link to="/events">
-          <button className="explore-more-button">Explore more</button>
-        </Link>
       </div>
-          </div>
       
-  
-      <Footer />
-      </div>
+          
+
+          <Footer />
+          </div>
   );
 }
 
