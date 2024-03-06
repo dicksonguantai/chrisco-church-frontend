@@ -93,16 +93,23 @@ border-top-right-radius: 10px;
 font-weight: lighter;
 }
 
+
+.events-container{
+  background-color: #1b1f83;
+  margin-top: 30px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 30px;
+}
+
 .events {
 /* display: grid;
 grid-template-columns:repeat(3,1fr); */
 /* gap: 20px; */
-background-color: #1b1f83;
+
 padding: 20px;
 border-radius: 20px;
-margin-top: 30px;
-margin-left: 20px;
-margin-right: 20px;
+
 text-align: center;
 justify-items: center;
 }
@@ -163,14 +170,13 @@ background-color: #0056b3;
 
 
 .explore-more-button {
-border: 1px solid red;
+/* border: 1px solid red; */
 background-color:lightsteelblue;
 cursor: pointer;
 display: block;
 width: 120px;
 padding: 10px;
 margin: 0 auto;
-margin-top: 10px;
 margin-bottom: 10px;
 border-radius: 5%;
 
@@ -229,5 +235,6 @@ height: 400px;
 
   .event-grid {
     padding: 5px; 
+    overflow: hidden;
   }
 }
