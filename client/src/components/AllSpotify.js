@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { BsChevronDoubleRight } from "react-icons/bs";
-import { useNavigate} from 'react-router-dom';
+import Header from './Header'
+import Footer from './Footer'
 
-const SpotifyEmbeds = () => {
+
+
+const AllSpotify = () => {
   const [latestEpisodes, setLatestEpisodes] = useState([]);
-  const navigate = useNavigate();
 
   useEffect(() => {
     fetchLatestEpisodes();
@@ -14,29 +16,27 @@ const SpotifyEmbeds = () => {
   const fetchLatestEpisodes = async () => {
     try {
       const response = await axios.get('https://chrisco-church-endpoints.onrender.com/spotify/latest-episodes');
-      const latestEpisodes = response.data.slice(0, 3); // Slice to get only the first three episodes
-    setLatestEpisodes(latestEpisodes);
+      setLatestEpisodes(response.data);
     } catch (error) {
       console.error('Error fetching latest episodes:', error);
     }
   };
 
-  const handleViewMoreClick = () => {
-    navigate(`/spotify`);
 
-  };
 
   return (
+    <>
+    <Header/>
     <div>
       <div className='row-heading events-row flex align-items-center'>
         <div className='col-md-4'>
           <h3 className="news-events-h3">We are on Spotify</h3>
         </div>
-        <div className='col-md-4'>
+        {/* <div className='col-md-4'>
           <div className='view-more'>
             <button type="button" className="btn btn-view-more" onClick={handleViewMoreClick}>View More<i className=" btn-view-more ti-angle-double-right"><BsChevronDoubleRight /></i></button>
           </div>
-        </div>
+        </div> */}
       </div>
       <div className="row">
         {latestEpisodes.map((episode, index) => (
@@ -56,7 +56,9 @@ const SpotifyEmbeds = () => {
         ))}
       </div>
     </div>
+    <Footer/>
+    </>
   );
 };
 
-export default SpotifyEmbeds;
+export default AllSpotify;

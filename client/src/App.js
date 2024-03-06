@@ -17,6 +17,7 @@ import Events from './components/Events';
 import {Routes, Route } from 'react-router-dom';
 import AdminPanel from './components/AdminPanel';
 import EditableTable from './components/EditableTable';
+import AllSpotify from './components/AllSpotify';
 
 function App() {
   return (
@@ -32,7 +33,8 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/panel" element={<AdminPanel />} />
           <Route path="/table" element={<EditableTable />} />
-
+          <Route path="/spotify" element={<AllSpotify />} />
+          
           <Route path="/signup" element={<Signup />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/contact-us" element={<ContactUs />} />
