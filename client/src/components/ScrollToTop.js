@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FaArrowCircleUp } from 'react-icons/fa'; // Importing an arrow-up icon from React Icons
+import './ScrollToTop.css'
 
 function ScrollToTop() {
   const [showButton, setShowButton] = useState(false);
@@ -29,7 +30,7 @@ function ScrollToTop() {
       onClick={scrollToTop}
       style={{ display: showButton ? 'block' : 'none' }}
     >
-      <FaArrowCircleUp />
+      <FaArrowCircleUp className='align-center' />
     </button>
   );
 }
