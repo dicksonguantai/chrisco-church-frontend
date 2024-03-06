@@ -1,16 +1,14 @@
 import React from "react";
 import { Button, Footer, Label, TextInput } from "flowbite-react"; // Import Footer from flowbite-react
-import {
-  BsDribbble,
-  BsFacebook,
-  BsGithub,
-  BsInstagram,
-  BsTwitter,
-} from "react-icons/bs";
+import {BsFacebook,BsInstagram,BsTwitter,} from "react-icons/bs";
+import ScrollToTop from "./ScrollToTop";
 
 function Footer2() {
   return (
+    <>
+    <ScrollToTop/>
     <div>
+      
       <Footer className="w-full bg-blue-900 text-white p-4">
         {" "}
         {/* Add background and text color */}
@@ -122,7 +120,9 @@ function Footer2() {
           </div>
         </div>
       </Footer>
+      
     </div>
+    </>
   );
 }
 

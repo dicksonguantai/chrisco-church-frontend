@@ -12,7 +12,8 @@ const SpotifyEmbeds = () => {
   const fetchLatestEpisodes = async () => {
     try {
       const response = await axios.get('https://chrisco-church-endpoints.onrender.com/spotify/latest-episodes');
-      setLatestEpisodes(response.data);
+      const latestEpisodes = response.data.slice(0, 3); // Slice to get only the first three episodes
+    setLatestEpisodes(latestEpisodes);
     } catch (error) {
       console.error('Error fetching latest episodes:', error);
     }
