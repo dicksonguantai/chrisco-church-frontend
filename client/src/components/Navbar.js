@@ -70,12 +70,13 @@ const Navbar = () => {
       
    return (
     <header className="nav-link-krgcjpg-parent">
+      <Link to="/">
       <img
         className="nav-link-krgcjpg"
         loading="eager"
         alt=""
         src="/logo.svg"
-      />
+      /> </Link>
       <div className="menu-icon" onClick={toggleMenu}>
               <span></span>
               <span></span>
