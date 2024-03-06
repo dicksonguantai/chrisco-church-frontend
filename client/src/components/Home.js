@@ -16,7 +16,7 @@ function Home() {
   const imageUrl = "/Images/20230827_124235.jpg";
 
   const [events, setEvents] = useState([]);
-  const [showFullText, setShowFullText] = useState(false);
+  const [expandedEvents, setExpandedEvents] = useState({});
 
   useEffect(() => {
     fetch("https://chrisco-church-endpoints.onrender.com/events/all")
@@ -36,8 +36,12 @@ function Home() {
     
   }, [events]);
 
-  const handleReadMoreClick = () => {
-    setShowFullText(true);
+  const handleReadMoreClick = (eventId) => {
+    setExpandedEvents({ ...expandedEvents, [eventId]: true });
+  };
+
+  const isEventExpanded = (eventId) => {
+    return expandedEvents[eventId];
   };
 
   var settings = {
@@ -84,24 +88,25 @@ function Home() {
         {events.map(event => (
           <div key={event.id} className="event-grid">
             <div className='event'>
-              <div className="event-img"></div>
-                <img src={event.event_img} alt={event.title} />
-                <h3>{event.title}</h3>
-                {showFullText ? <p>{event.description}</p> : <p>{event.description.slice(0, 55)}</p>}
-                <button className="read-more" onClick={handleReadMoreClick}>Read More</button>
+                <div className="event-img">
+                  <img src={event.event_img} alt={event.title} />
+                </div>
+                  <h3>{event.title}</h3>
+                  {isEventExpanded(event.id) ? <p>{event.description}</p> : <p>{event.description.slice(0, 55)}</p>}
+                  <button className="read-more" onClick={() => handleReadMoreClick(event.id)}>Read More</button>
             </div>
           </div>
         ))}
+        <div className="explore-more-container">
+        <Link to="/events">
+          <button className="explore-more-button">Explore more</button>
+        </Link>
       </div>
-      <div className="explore-more-container">
-      <Link to="/events">
-        <button className="explore-more-button">Explore more</button>
-      </Link>
-      </div>
+          </div>
       
-      
+  
       <Footer />
-    </div>
+      </div>
   );
 }
 
