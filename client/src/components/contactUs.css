@@ -163,3 +163,45 @@ input[type="submit"] {
   margin-top: 80px; /* Adjust the margin as needed */
   margin-bottom: 10px;
 }
+
+/* For screens smaller than 768px (typical mobile devices) */
+@media (max-width: 768px) {
+  .contact-info {
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center align items */
+  }
+
+  .contact-image {
+    width: 80%; /* Reduce image width */
+    margin-bottom: 2rem;
+  }
+
+  .contact-content h1 {
+    font-size: 2rem; /* Decrease title font size */
+  }
+
+  .contact-methods {
+    flex-direction: column; /* Stack contact methods vertically */
+    align-items: center; /* Center align items */
+  }
+
+  .contact-method {
+    width: 80%; /* Reduce contact method width */
+    margin-bottom: 1rem;
+  }
+
+  .map-background {
+    padding: 10px; /* Reduce padding */
+  }
+
+  .contact-form {
+    max-width: 90%; /* Increase form width */
+  }
+
+  label,
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    font-size: 14px; /* Reduce font size for form elements */
+}
+}
