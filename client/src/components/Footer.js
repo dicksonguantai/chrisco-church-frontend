@@ -91,7 +91,7 @@ function Footer2() {
                 </Footer.LinkGroup>
               </div>
             </div>
-            <div className="mb-2 md:w-auto px-4">
+            <div className="mb-2 md:w-auto px-4" id="paybill">
               <div>
                 <img
                   src="/Images/give.webp"

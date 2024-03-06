@@ -1,6 +1,6 @@
 import "./Navbar.css";
 import {Link} from 'react-router-dom'
-import { useState } from "react";
+import { useState ,useEffect} from "react";
 import Modal from './Modal';
 import React from "react";
 
@@ -32,11 +32,41 @@ const Navbar = () => {
   };
 
   
-    const scrollToBottom = () => {
+  const scrollToAndHighlight = () => {
+    const element = document.getElementById('paybill');
+    if (element) {
+      // Scroll to the element
       window.scrollTo({
-        top: document.documentElement.scrollHeight,
+        top: element.offsetTop,
         behavior: 'smooth'
-      });}
+      });
+
+      // Apply bouncing animation to highlight the element
+      element.style.animation = 'bounce 1s infinite';
+      
+      // Remove the animation after a certain duration (e.g., 2 seconds)
+      setTimeout(() => {
+        element.style.animation = '';
+      }, 2000);
+    }
+  };
+
+  useEffect(() => {
+    const style = document.createElement('style');
+    style.innerHTML = `
+      @keyframes bounce {
+        0% { transform: translateY(0); }
+        50% { transform: translateY(-20px); }
+        100% { transform: translateY(0); }
+      }
+    `;
+    document.head.appendChild(style);
+
+    return () => {
+      document.head.removeChild(style);
+    };
+  }, []);
+
       
    return (
     <header className="nav-link-krgcjpg-parent">
@@ -58,11 +88,11 @@ const Navbar = () => {
         <li><Link to="/departments">Departments</Link></li>
         <li><Link to="/blogs">Services</Link></li>
         <li><Link to="/contact-us">ContactUs</Link></li>
-        <button className="give login-text nav-container sm-buttons">
+        <button className="give login-text nav-container sm-buttons" onClick={scrollToAndHighlight}>
             <b className="login">Give</b>
           </button>
 
-          <button className="nav-container sm-buttons" onClick={scrollToBottom}>
+          <button className="nav-container sm-buttons" >
             <b className="login">Login</b>
           </button>
       </ul>
@@ -94,7 +124,7 @@ const Navbar = () => {
             <Link to="/contact-us">Contact Us</Link>
             </div>
           </div>
-          <button className="give login-text nav-container" onClick={scrollToBottom}>
+          <button className="give login-text nav-container" onClick={scrollToAndHighlight}>
             <b className="login">Give</b>
           </button>
           {/* <button className="nav-container" onClick={toggleModal}>
