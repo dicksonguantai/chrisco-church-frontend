@@ -69,7 +69,7 @@ function Footer2() {
                     </>
                   }
                 />
-                <Button className="bg-blue-500 hover:text-red-500 hover:bg-blue-600">
+                <Button className="color-red">
                   Submit
                 </Button>
               </div>
