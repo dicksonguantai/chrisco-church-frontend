@@ -1,116 +1,149 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Header from "./Header";
 import Footer from "./Footer";
-import { Link } from 'react-router-dom';
-
+import { Link } from "react-router-dom";
+import "./AboutUs.css";
 
 function AboutUs() {
-    
-  
+  const [aboutData, setAboutData] = useState(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchAboutData = async () => {
+      try {
+        const response = await fetch(
+          "https://chrisco-church-endpoints.onrender.com/about/all"
+        );
+        if (!response.ok) {
+          throw new Error("Failed to fetch data");
+        }
+        const data = await response.json();
+        setAboutData(data[0]); // Assuming the response is an array with a single object
+        setIsLoading(false);
+      } catch (error) {
+        setError(error.message);
+        setIsLoading(false);
+      }
+    };
+
+    fetchAboutData();
+
+    // Cleanup function
+    return () => {
+      // Any cleanup code if needed
+    };
+  }, []);
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
   return (
     <div className="about-us">
-        <Header />
-      
-        <section className="why-chrisco">
-      <div className="content">
-        <h1>Why Chrisco Central?</h1>
-        <p>
-          The Chrisco Church is a congregation where larger Christ co-events happen.
-          Located in Woodley, Nairobi, Kenya.
-        </p> 
-         <p>The church is headed by Professor
-          Joseph Magio and Pastor Rosemary Mugo, along with other eldership.
-         </p>  
-         <p>
-          The church aims at meeting the needs of the total man spiritually .
-          </p>
-          <p>
-          Our dedicated team of elders and volunteers work tirelessly to create a warm
-          and conducive environment for all.</p>
-        
-         
-        <Link to="/history">
-        <button className="explore-more"> Explore More</button>
-           </Link>
-      
+      <Header />
 
-      </div>
-      <img src="people.png" alt="People at Church" className="church-community-image" />
-    </section>
+      <section className="why-chrisco">
+        <div className="content">
+          <h1>{aboutData.title}</h1>
+          <p>{aboutData.description}</p>
+          <Link to="/history">
+            <button className="explore-more"> Explore More</button>
+          </Link>
+        </div>
+        <img
+          src={aboutData.about_img}
+          alt="People at Church"
+          className="church-community-image"
+        />
+      </section>
 
-    <div className="long">
-      <div className="mission">
-        <h2>Our Mission</h2>
-        <p>To equip belivers through prayer, teaching God's word, discipleship, evangelism, Christian living, tent-making so that they can be united and attain the full knowledge of Christ in spiritual maturity.</p>
-      </div>
-      
-      <div className="vision">
-        <h2>Our Vision</h2>
-        <p>To become a congregation of believers disciples under the five-fold ministry to fulfill the great commission of our Lord Jesus Christ.</p>
-      </div>
+      <div className="long">
+        <div className="mission">
+          <h2>Our Mission</h2>
+          <p>{aboutData.mission}</p>
+        </div>
+
+        <div className="vision">
+          <h2>Our Vision</h2>
+          <p>{aboutData.vision}</p>
+        </div>
       </div>
 
       <div className="faith-container">
-  <div className="faith-content">
-    <h1>OUR FAITH</h1>
-    <p>At Chrisco Central church, we offer a variety of services and programs to meet the spiritual needs of the congregation. Our Sunday service includes uplifting music, inspiring sermons, and opportunities for personal growth and connection. We also have programs for children, youth, and adults throughout the week.</p>
-  </div>
-  <div className="faith-image">
-    <img src="faith.png" alt="faith stone" className="faith-picture" />
-  </div>
-</div>
+        <div className="faith-content">
+          <h1>OUR FAITH</h1>
+          <p>{aboutData.faith}</p>
+        </div>
+        <div className="faith-image">
+          <img
+            src={aboutData.faith_img}
+            alt="faith stone"
+            className="faith-picture"
+          />
+        </div>
+      </div>
 
       <div class="separator"></div>
 
       <div className="word-container">
-  <div className="word-image">
-    <img src="bible.png" alt="bible" className="bible" />
-  </div>
-  <div className="word-content">
-    <h1>THE WORD</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed in mauris congue, dignissim nulla et tincidunt velit. Sed libero arcu, convallis in eros vel, egestus congue nulla.Sed nec dictum nulla.Nulla facilisi.Aliquam erat volutpat. Sed non quam arcu. Donec euismod mauris.</p>
-  </div>
-</div>
-
-        <div class="separator"></div>
-
-        <div className="trinity-container">
-  <div className="trinity-content">
-    <h1>THE TRINITY</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed in mauris congue, dignissim nulla et tincidunt velit. Sed libero arcu, convallis in eros vel, egestus congue nulla.Sed nec dictum nulla.Nulla facilisi.Aliquam erat volutpat. Sed non quam arcu. Donec euismod mauris.</p>
-  </div>
-  <div className="trinity-image">
-    <img src="trinity.png" alt="trinity" className="trinity-picture" />
-  </div>
-</div>
-
-        <div class="separator"></div>
-
-        <div className="baptism-container">
-  <div className="baptism-image">
-    <img src="baptism.png" alt="baptism" className="baptism-picture" />
-  </div>
-  <div className="baptism-content">
-    <h1>THE BAPTISM</h1>
-    <p>Lorem ipsum dolor sit amet consectetur adipiscing elit. Sed in mauris congue, dignissim nulla et tincidunt velit. Sed libero arcu, convallis in eros vel, egestus congue nulla.Sed nec dictum nulla.Nulla facilisi.Aliquam erat volutpat. Sed non quam arcu. Donec euismod mauris.</p>
-  </div>
-</div>
-
-
-        <div className="end" >   
-      <div className="section1" id="church">
-        <h1>OUR CHURCH</h1>
-        <img src="church.png" alt="Church" />
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in mauris congue, dignissim nulla et, tincidunt velit. Sed libero arcu, convallis in eros vel, egestas congue nulla. Sed nec dictum nulla. Nulla facilisi. Aliquam erat volutpat. Sed non quam arcu. Donec euismod mauris.</p>
-      
-
-      
-        <h1>OUR PURPOSE</h1>
-        <img src="praise.png" alt="Raised Hands" />
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed in mauris congue, dignissim nulla et, tincidunt velit. Sed libero arcu, convallis in eros vel, egestas congue nulla. Sed nec dictum nulla. Nulla facilisi. Aliquam erat volutpat. Sed non quam arcu. Donec euismod mauris.</p>
+        <div className="word-image">
+          <img src={aboutData.word_img} alt="bible" className="bible" />
+        </div>
+        <div className="word-content">
+          <h1>THE WORD</h1>
+          <p>{aboutData.word}</p>
+        </div>
       </div>
+
+      <div class="separator"></div>
+
+      <div className="trinity-container">
+        <div className="trinity-content">
+          <h1>THE TRINITY</h1>
+          <p>{aboutData.trinity}</p>
+        </div>
+        <div className="trinity-image">
+          <img
+            src={aboutData.trinity_img}
+            alt="trinity"
+            className="trinity-picture"
+          />
+        </div>
       </div>
-    
+
+      <div class="separator"></div>
+
+      <div className="baptism-container">
+        <div className="baptism-image">
+          <img
+            src={aboutData.baptism_img}
+            alt="baptism"
+            className="baptism-picture"
+          />
+        </div>
+        <div className="baptism-content">
+          <h1>THE BAPTISM</h1>
+          <p>{aboutData.baptism}</p>
+        </div>
+      </div>
+
+      <div className="end">
+        <div className="section1" id="church">
+          <h1>OUR CHURCH</h1>
+          <img src="church.png" alt="Church" />
+          <p>{aboutData.church_slogan}</p>
+
+          <h1>OUR PURPOSE</h1>
+          <img src="praise.png" alt="Raised Hands" />
+          <p>{aboutData.purpose}</p>
+        </div>
+      </div>
+
       <Footer />
     </div>
   );

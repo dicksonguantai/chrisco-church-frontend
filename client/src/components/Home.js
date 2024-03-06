@@ -9,13 +9,14 @@ import 'slick-carousel/slick/slick-theme.css';
 import Youtube from './Youtube';
 import { Link } from 'react-router-dom';
 import Services from "./Services";
+import './Home.css';
 
 function Home() {
-  const imageUrl2 = "/Images/Homepic.png";
+  const imageUrl2 = "/Images/20230818_142741.jpg";
   const imageUrl = "/Images/20230827_124235.jpg";
 
   const [events, setEvents] = useState([]);
-  const [showFullText, setShowFullText] = useState(false);
+  const [expandedEvents, setExpandedEvents] = useState({});
 
   useEffect(() => {
     fetch("https://chrisco-church-endpoints.onrender.com/events/all")
@@ -35,8 +36,12 @@ function Home() {
     
   }, [events]);
 
-  const handleReadMoreClick = () => {
-    setShowFullText(true);
+  const handleReadMoreClick = (eventId) => {
+    setExpandedEvents({ ...expandedEvents, [eventId]: true });
+  };
+
+  const isEventExpanded = (eventId) => {
+    return expandedEvents[eventId];
   };
 
   var settings = {
@@ -53,14 +58,14 @@ function Home() {
   return (
     <div>
       <Header />
-      <Slider {...settings}>
+      <div className='slider-container'>
+      <Slider {...settings} className='slider'>
         <div className="image-container">
           <img src={imageUrl} alt="background" className="image" />
           <div className="overlay">
             <h2 className="title">Welcome to Chrisco Central Church</h2>
             <h3>Join our community of Faith</h3>
             <p className="description">Loving God, loving others and serving the world through the words of the Lord</p>
-            <button className="read-more">Read More</button>
           </div>
         </div>
         <div className="image-container">
@@ -70,6 +75,7 @@ function Home() {
           <img src={imageUrl} alt="background" className="image" />
         </div>
       </Slider>
+      </div>
       <Services/>
       <SpotifyEmbeds />
       <div className="container-banner-container-rounded">
@@ -81,19 +87,26 @@ function Home() {
       <div className="events">
         {events.map(event => (
           <div key={event.id} className="event-grid">
-            <img src={event.event_img} alt={event.title} />
-            <h3>{event.title}</h3>
-            {showFullText ? <p>{event.description}</p> : <p>{event.description.slice(0, 50)}</p>}
-            <button className="read-more" onClick={handleReadMoreClick}>Read More</button>
+            <div className='event'>
+                <div className="event-img">
+                  <img src={event.event_img} alt={event.title} />
+                </div>
+                  <h3>{event.title}</h3>
+                  {isEventExpanded(event.id) ? <p>{event.description}</p> : <p>{event.description.slice(0, 55)}</p>}
+                  <button className="read-more" onClick={() => handleReadMoreClick(event.id)}>Read More</button>
+            </div>
           </div>
         ))}
+        <div className="explore-more-container">
         <Link to="/events">
-        <button className="explore-more">Explore more</button>
-      </Link>
+          <button className="explore-more-button">Explore more</button>
+        </Link>
       </div>
+          </div>
       
+  
       <Footer />
-    </div>
+      </div>
   );
 }
 

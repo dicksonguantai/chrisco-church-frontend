@@ -2,6 +2,7 @@ import React from "react";
 import Header from "./Header";
 import Footer from "./Footer";
 import { useState, useEffect } from "react";
+import './Departments.css';
 
 function Departments() {
     const [departments, setDepartments] = useState([]);

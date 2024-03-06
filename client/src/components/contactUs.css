@@ -1,0 +1,165 @@
+.contact-us-container {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.contact-info {
+  display: flex; /* Use flexbox to display elements side by side */
+  align-items: center; /* Align items vertically in the center */
+}
+
+.contact-image {
+  width: 50%;
+  margin-bottom: 3rem;
+  margin-right: 20px;
+}
+
+.contact-content {
+  width: 100%;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.contact-content h1 {
+  color: #163691;
+}
+
+.contact-content p {
+  font-size: 18px;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+}
+
+.contact-methods {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 2rem;
+}
+
+.contact-method {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 1.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  width: 30%;
+}
+
+.contact-method svg {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.contact-method h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.contact-method p {
+  font-size: 16px;
+}
+
+.map-background {
+  position: relative;
+  background-image: url('https://lh3.googleusercontent.com/pw/AP1GczP5zQENgKYBue2bHNgiplFUMP4EtngfGGYt5SUJGXfByjrtfUSERgL8fj_1G9jqDaOt9Pxl1TgqYsi33IoUdlhwN5rY7oEOQmZEY-hEGWILH8M73Q=w2400');  /* Set background image */
+  background-size: cover; /* Cover the entire element with the background image */
+  background-position: center; /* Center the background image */
+  padding: 20px; /* Adjust padding as needed */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.contact-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 10px;
+  margin-top: 30px;
+  padding: 20px; /* Add padding for better visual separation */
+  border: 1px solid #ccc; /* Add border for visual distinction */
+  border-radius: 5px; /* Add border radius for rounded corners */
+  max-width: 500px;
+  margin: 0 auto;
+  background-color: #b6acac;
+  
+}
+
+label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  display: inline-block;
+  width: 100%;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 100%;
+  width: calc(100% - 22px);
+  box-sizing: border-box;
+  resize: vertical;
+  margin-bottom: 10px;
+  background-color: white;
+}
+
+textarea {
+  height: 150px;
+}
+
+input[type="submit"] {
+  border: 2px solid #dd212e;
+  background-color: #b6acac;
+  color: #dd212e;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: auto;
+  font-size: 16px;
+  display: block;
+  margin: 0 auto;
+}
+
+.email h2 {
+  text-align: center;
+  font-size: xx-large;
+  color: #163691;
+}
+
+/* Additional style for the button text color */
+input[type="submit"] {
+  color: #dd212e; /* Change button text color to red */
+}
+
+
+.map-image {
+  position: absolute;
+
+}
+
+.map {
+  width: 100%;
+  height: 500px; /* Set the desired height */
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.map-container {
+  position: relative;
+  width: 100%;
+  height: 500px; /* Set the desired height */
+  overflow: hidden; /* Hide any overflowing content */
+  margin-top: 80px; /* Adjust the margin as needed */
+  margin-bottom: 10px;
+}
