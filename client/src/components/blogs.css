@@ -1,0 +1,68 @@
+.blog {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.title {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.meta {
+  color: #666;
+  margin-bottom: 10px;
+}
+
+.writer {
+  margin-right: 10px;
+}
+
+.read-time {
+  font-style: italic;
+}
+
+.content {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+}
+
+.like-btn,
+.dislike-btn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 12px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+
+.comments {
+  margin-left: auto;
+}
+.blogs-cards {
+  display: flex;
+  flex-wrap: wrap; 
+  margin-right: 15px;
+  margin-left: 15px;
+  padding: 20px;
+  justify-content: center;
+
+}
+.blog-card {
+  margin:15px;
+  padding: 20px;
+  
+
+}
+.read-more{
+  background-color: #163691;
+}

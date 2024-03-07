@@ -1,0 +1,67 @@
+/* Custom CSS for Spotify Embeds */
+
+.row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-right: 15px;
+    margin-left: 15px;
+    padding: 10px;
+  }
+  .row-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    margin:15px;
+    padding: 10px;
+  }
+  .events-row {
+    background-color: #ec1d23;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+
+}
+  .news-events-h3 {
+    float:left;
+    font-size: 28px;
+    color: white;
+}
+
+.btn-view-more {
+    float: right;
+    font-size: 25px;
+    color: #ffffff;
+}
+  .col-md-4 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 15px;
+  }
+  .view-more{
+    align-items:center;
+
+  }
+  
+  @media (min-width: 768px) {
+    .col-md-4 {
+      flex: 0 0 33%;
+      max-width: 33%;
+    }
+  }
+  @media (max-width: 768px) {
+    .news-events-h3 {
+      font-size: 15px;
+
+     
+  }
+  .btn-view-more {
+    font-size: 15px;
+}
+.view-more{
+  align-items:center;
+
+}
+  }
