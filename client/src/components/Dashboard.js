@@ -8,6 +8,7 @@ const Dashboard = () => {
   const Email = localStorage.getItem('email') || '';
   const Role = localStorage.getItem('role') || '';
   const Token = localStorage.getItem('accessToken') || '';
+  const Refresh = localStorage.getItem('refreshToken') || '';
   console.log("First Name:", FirstName);
 
   const handleLogout = () => {
@@ -22,6 +23,7 @@ const Dashboard = () => {
       <h1>Email, {Email}</h1>
       <h1>Role, {Role}</h1>
       <h1>Token, {Token}</h1>
+      <h1>Refresh, {Refresh}</h1>
       <button onClick={handleLogout}>Logout</button>
     </div>
   );
