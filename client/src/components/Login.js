@@ -33,6 +33,7 @@ const LogIn = ({ onClose }) => {
       const data = await response.json();
 
       localStorage.setItem('accessToken', data.tokens.access);
+      localStorage.setItem('refreshToken', data.tokens.refresh);
       localStorage.setItem('firstName', data.user_details.username);
       localStorage.setItem('lastName', data.user_details.lastname);
       localStorage.setItem('email', data.user_details.email);
